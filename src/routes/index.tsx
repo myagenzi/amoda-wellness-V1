@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { HeroVideo } from "@/components/site/HeroVideo";
+import { HeroTakeaways } from "@/components/site/HeroTakeaways";
 import { QuietLink } from "@/components/site/QuietButton";
 import { LotusMark, PetalDivider, LotusWatermark } from "@/components/brand/LotusMark";
 import { EcosystemIcon } from "@/components/brand/EcosystemIcon";
@@ -45,19 +46,19 @@ function Home() {
   return (
     <>
       {/* 1 — Hero: video stage, parchment type on an ink scrim */}
-      <section className="relative -mt-[var(--header-h)] flex min-h-[86svh] items-center overflow-hidden px-5 pt-[var(--header-h)] pb-24 sm:px-8 md:min-h-[92svh]">
+      <section className="relative -mt-[var(--header-h)] flex min-h-[94svh] flex-col justify-center overflow-hidden px-5 pt-[calc(var(--header-h)+2rem)] pb-[13rem] sm:px-8 md:min-h-[100svh] md:pt-[calc(var(--header-h)+3rem)] md:pb-[9.5rem]">
         <HeroVideo />
         <div className="mx-auto w-full max-w-6xl">
           <Reveal className="max-w-[46rem]">
             <Eyebrow withDot tone="sage">
               {site.tagline}
             </Eyebrow>
-            <h1 className="type-hero mt-6 max-w-[24ch] text-parchment">
+            <h1 className="type-hero mt-7 max-w-[24ch] text-parchment">
               Wellness isn't a destination. It's{" "}
               <span className="type-accent text-sage">coming home to yourself.</span>
             </h1>
-            <p className="mt-6 max-w-[46ch] text-lg text-parchment/85">{hero.subheadline}</p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <p className="mt-7 max-w-[46ch] text-lg text-parchment/85">{hero.subheadline}</p>
+            <div className="mt-10 flex flex-wrap items-center gap-5">
               <QuietLink to="/classes" size="lg" variant="onInk">
                 {hero.primaryCta}
               </QuietLink>
@@ -73,11 +74,12 @@ function Home() {
             <LotusMark
               variant="micro"
               ground="dark"
-              className="mt-12 w-14 opacity-85"
+              className="mt-10 w-14 opacity-85"
               unfold
             />
           </Reveal>
         </div>
+        <HeroTakeaways />
       </section>
 
       {/* 2 — The problem */}
