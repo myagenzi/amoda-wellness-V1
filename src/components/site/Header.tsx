@@ -1,15 +1,19 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, ShoppingBag, X } from "lucide-react";
 import { Lockup } from "@/components/brand/Lockup";
 import { LotusMark } from "@/components/brand/LotusMark";
 import { QuietLink } from "./QuietButton";
+import { HeaderSearch } from "./HeaderSearch";
 import { nav } from "@/content/site";
 import { categories } from "@/content/categories";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const isHome = pathname === "/";
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -18,35 +22,85 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /** Over the hero video: transparent bar, parchment type. */
+  const onInk = isHome && !scrolled && !open;
+
+  const desktopNav = nav.filter((item) => item.to !== "/" && item.to !== "/shoppe");
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--hairline)] bg-background/92 backdrop-blur-sm">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-colors duration-500 ease-[var(--ease-settle)]",
+        onInk
+          ? "border-transparent bg-transparent"
+          : "border-[var(--hairline)] bg-background/92 backdrop-blur-sm",
+      )}
+    >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" aria-label="Amoda Wellness — home" onClick={() => setOpen(false)}>
-          {/* Full lockup: header and footer only */}
-          <Lockup size="sm" withTagline={false} className="hidden sm:flex" />
-          <LotusMark variant="ring" className="w-9 sm:hidden" title="Amoda Wellness" />
+          <Lockup
+            size="sm"
+            withTagline={false}
+            ground={onInk ? "dark" : "light"}
+            className="hidden sm:flex"
+          />
+          <LotusMark
+            variant="ring"
+            ground={onInk ? "dark" : "light"}
+            className="w-9 sm:hidden"
+            title="Amoda Wellness"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
-          {nav.slice(1).map((item) => (
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          {desktopNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="type-label text-ink/70 transition-colors duration-400 hover:text-leaf"
-              activeProps={{ className: "type-label text-leaf" }}
+              className={cn(
+                "type-nav transition-colors duration-400",
+                onInk ? "text-parchment/85 hover:text-parchment" : "text-ink/70 hover:text-leaf",
+              )}
+              activeProps={{ className: onInk ? "type-nav text-parchment" : "type-nav text-leaf" }}
             >
               {item.label}
             </Link>
           ))}
-          <QuietLink to="/membership" size="sm" className="ml-1">
-            Join Amoda
-          </QuietLink>
+
+          <div className="flex items-center gap-1 pl-1">
+            <HeaderSearch onInk={onInk} />
+            <Link
+              to="/shoppe"
+              aria-label="Shoppe"
+              className={cn(
+                "rounded-full p-2 transition-colors duration-500",
+                onInk ? "text-parchment hover:text-sage" : "text-leaf hover:text-ink",
+              )}
+            >
+              <ShoppingBag className="size-[1.05rem]" />
+            </Link>
+            <QuietLink
+              to="/membership"
+              size="sm"
+              variant={onInk ? "onInk" : "leaf"}
+              className="ml-2"
+            >
+              Join Amoda
+            </QuietLink>
+          </div>
         </nav>
 
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="type-label flex items-center gap-2 text-leaf lg:hidden"
+          className={cn("type-label flex items-center gap-2 lg:hidden", onInk ? "text-parchment" : "text-leaf")}
           aria-expanded={open}
           aria-controls="mobile-nav"
         >

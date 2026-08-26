@@ -186,6 +186,43 @@
   line-height: 1.5;
 }
 
+/* Navigation labels — composed, evenly spaced, quiet underline on hover */
+@utility type-nav {
+  font-family: var(--font-body);
+  font-weight: 450;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  position: relative;
+  white-space: nowrap;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0.7;
+    transition: transform 420ms var(--ease-settle);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Hero scrim — ink veil over video, darker at top and bottom for type contrast */
+@utility bg-scrim {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--ink) 74%, transparent) 0%,
+    color-mix(in oklab, var(--ink) 46%, transparent) 42%,
+    color-mix(in oklab, var(--ink) 78%, transparent) 100%
+  );
+}
+
 /* ---- Quiet Emboss: paper depth, never heavy shadow ---- */
 
 @utility emboss {
