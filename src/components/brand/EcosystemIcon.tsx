@@ -6,7 +6,8 @@ export type IconName =
   | "community"
   | "shoppe"
   | "retreat"
-  | "corporate";
+  | "corporate"
+  | "practitioner";
 
 /**
  * Organic 1.5px linework echoing the lotus petal — no fills, no geometric/tech
