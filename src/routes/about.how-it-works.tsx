@@ -7,24 +7,29 @@ import communityImage from "@/assets/community-call.jpg";
 
 const steps = [
   {
-    step: "01",
-    title: "Tell us what's going on",
-    body: "A sentence or two is enough. No intake quiz, no questionnaire designed to sell you a tier.",
+    step: "Step 1",
+    title: "Join the Community",
+    body: "Become an Amoda member and get access to the community, live sessions, and accountability groups.",
   },
   {
-    step: "02",
-    title: "We match you to a practitioner",
-    body: "A person reads your note and suggests someone specific — with a reason, and an honest alternative if we have one.",
+    step: "Step 2",
+    title: "Find Your Path",
+    body: "Whether you need a coach, a class, or a specific solution (like diabetic wellness support), take our short check-in and we'll point you in the right direction.",
   },
   {
-    step: "03",
-    title: "Meet live",
-    body: "1:1 or in a small group, held online. The first session sets a focus and a realistic starting point.",
+    step: "Step 3",
+    title: "Get Matched",
+    body: "Browse our curated network of practitioners — health coaches, life coaches, nutritionists, yoga teachers, and diabetic-wellness specialists — vetted for quality and ethics.",
   },
   {
-    step: "04",
-    title: "Keep going, with support",
-    body: "Follow-ups with the same practitioner, plus community accountability groups for the weeks in between.",
+    step: "Step 4",
+    title: "Go Deeper",
+    body: "Book a live class, start 1:1 coaching, shop the Shoppe, or bring Amoda into your workplace through Corporate Wellness.",
+  },
+  {
+    step: "Step 5",
+    title: "Stay Connected",
+    body: "This isn't a one-time transaction. It's a community you grow with — with new categories, practitioners, and Shoppe drops added as Amoda grows.",
   },
 ];
 
@@ -54,17 +59,17 @@ const faqs = [
 export const Route = createFileRoute("/about/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How Amoda Works — From Enquiry to Live Session" },
+      { title: "How Amoda Works — Ecosystem Overview | Amoda Wellness" },
       {
         name: "description",
         content:
-          "How Amoda works: tell us what's going on, we match you to a vetted practitioner, and you meet live. Enquiry-based, no online booking engine, nothing pre-recorded.",
+          "How it all fits together: join the community, find your path, get matched with a vetted practitioner, go deeper with live classes and coaching, and stay connected.",
       },
       { property: "og:title", content: "How Amoda Works" },
       {
         property: "og:description",
         content:
-          "Four steps from enquiry to a live session with a vetted practitioner — matched by a person, not a quiz.",
+          "How it all fits together — five steps from joining the Amoda community to going deeper with trusted practitioners.",
       },
     ],
   }),
@@ -76,12 +81,12 @@ function HowItWorksPage() {
     <>
       <Section>
         <Reveal className="max-w-[52ch]">
-          <Eyebrow withDot>How Amoda works</Eyebrow>
-          <h1 className="type-hero mt-6 text-ink">Four steps, one of them a conversation.</h1>
+          <Eyebrow withDot>How Amoda Works</Eyebrow>
+          <h1 className="type-hero mt-6 text-ink">How it all fits together.</h1>
           <Prose className="mt-6">
             <p>
-              There is no algorithm here and no funnel. A person reads what you send and matches you
-              to a practitioner they'd send a friend to.
+              Amoda brings together everything wellness should be — trusted practitioners, live
+              classes and coaching, and a community that keeps you going.
             </p>
           </Prose>
         </Reveal>
@@ -138,8 +143,11 @@ function HowItWorksPage() {
             <Eyebrow>Questions</Eyebrow>
             <h2 className="type-h1 mt-5 text-ink">Answered plainly.</h2>
             <div className="mt-8">
-              <QuietLink to="/classes" variant="outline">
-                Explore live classes
+              <QuietLink to="/membership" variant="outline">
+                Join the Waitlist
+              </QuietLink>
+              <QuietLink to="/practitioners" variant="quiet">
+                Browse Practitioners
               </QuietLink>
             </div>
           </Reveal>

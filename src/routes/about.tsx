@@ -7,40 +7,36 @@ import { manifesto } from "@/content/home";
 import { site } from "@/content/site";
 import founderImage from "@/assets/founder.jpg";
 
-const values = [
+const roles = [
   {
-    title: "Trust before scale",
-    body: "We would rather list six practitioners we can vouch for than six hundred we can't. Growth follows the standard, never the reverse.",
+    title: "As Connector",
+    body: "she brings together clients and trusted practitioners, local communities and global wisdom, modern life and traditional practice.",
   },
   {
-    title: "Live over library",
-    body: "Recorded content is easy to sell and easy to abandon. Presence is what changes anything, so everything here is held live.",
+    title: "As Curator",
+    body: "she ensures every practitioner and experience inside Amoda meets a real standard — qualified, ethical, authentic.",
   },
   {
-    title: "Ancient roots, modern results",
-    body: "Practices with real lineage, held to a modern standard of clarity — specific guidance, honest limits, no mysticism as a substitute for rigour.",
-  },
-  {
-    title: "Joy is not optional",
-    body: "Amoda means delight. Wellbeing that feels like punishment doesn't last, and we won't build it.",
+    title: "As Community Builder",
+    body: "she creates the belonging, accountability, and shared growth that makes wellness stick.",
   },
 ];
+
+const seo = {
+  title: "About Amoda Wellness — Our Story & Founder",
+  description:
+    "Amoda means joy. Meet Arti — connector, curator, community builder — and the mission behind Amoda Wellness: trusted practitioners, live classes, and real community.",
+};
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Amoda Wellness — Why We Built This" },
-      {
-        name: "description",
-        content:
-          "Amoda Wellness exists because trustworthy wellness guidance is hard to find. Our story, our values, and the standard we hold every practitioner to.",
-      },
-      { property: "og:title", content: "About Amoda Wellness" },
-      {
-        property: "og:description",
-        content:
-          "Trust before scale. Live over library. The story behind Amoda and the standard we hold practitioners to.",
-      },
+      { title: seo.title },
+      { name: "description", content: seo.description },
+      { property: "og:title", content: seo.title },
+      { property: "og:description", content: seo.description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AboutPage,
@@ -53,20 +49,15 @@ function AboutPage() {
         <Reveal className="max-w-[54ch]">
           <Eyebrow withDot>About Amoda</Eyebrow>
           <h1 className="type-hero mt-6 text-ink">
-            Amoda means <span className="type-accent">delight.</span>
+            Amoda means <span className="type-accent">joy.</span>
           </h1>
+          <p className="type-caption mt-4 text-leaf">(Sanskrit for joy, delight)</p>
           <Prose className="mt-6">
-            <p>{site.promise}</p>
             <p>
-              We started Amoda after watching people we love spend years and real money on wellness
-              that never quite landed — certifications nobody could verify, subscriptions nobody
-              finished, advice written for a body that wasn't theirs.
+              We believe wellness isn't the absence of illness — it's the presence of vitality,
+              connection, balance, and joy in everyday life.
             </p>
-            <p>
-              So we built the opposite: a small, carefully vetted network of practitioners, live
-              sessions instead of a content library, and a community that keeps a practice going
-              after the initial enthusiasm fades.
-            </p>
+            <p>That belief is the whole reason Amoda exists.</p>
           </Prose>
         </Reveal>
       </Section>
@@ -76,7 +67,7 @@ function AboutPage() {
           <Reveal>
             <img
               src={founderImage}
-              alt="Amoda's founder in conversation in a warm, lived-in studio"
+              alt="Arti, founder of Amoda Wellness, in conversation in a warm, lived-in studio"
               width={1400}
               height={1200}
               loading="lazy"
@@ -84,50 +75,67 @@ function AboutPage() {
             />
           </Reveal>
           <Reveal delay={120}>
-            <Eyebrow>Our story</Eyebrow>
-            <h2 className="type-h1 mt-5 max-w-[24ch] text-ink">
-              It began with a question nobody could answer well.
+            <Eyebrow>Our Story &amp; Founder</Eyebrow>
+            <h2 className="type-h1 mt-5 max-w-[26ch] text-ink">
+              Meet Arti — Connector, Curator, Community Builder
             </h2>
             <Prose className="mt-6">
               <p>
-                “Who should I actually see?” We asked it on behalf of a family member, and found that
-                the honest answer required weeks of checking credentials, calling references, and
-                sitting in on sessions.
-              </p>
-              <p>
-                That work — the unglamorous verification part — became the product. Amoda is based in
-                Ottawa and works with practitioners across Canada, India and the UK, in several
-                languages.
+                Arti didn't set out to become another wellness expert adding her voice to an already
+                crowded space. She set out to build the bridge — between people looking for real
+                guidance and the practitioners, wisdom, and communities who could actually provide
+                it.
               </p>
             </Prose>
-            <div className="mt-8">
+            <dl className="mt-8 space-y-5">
+              {roles.map((role) => (
+                <div key={role.title} className="border-t border-[var(--hairline)] pt-5">
+                  <dt className="type-h3 text-ink">{role.title}</dt>
+                  <dd className="mt-2 text-[0.9375rem] leading-relaxed text-ink/75">{role.body}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-12 lg:grid-cols-2">
+          <Reveal>
+            <Eyebrow>Our Mission</Eyebrow>
+            <p className="type-h2 mt-5 max-w-[38ch] text-ink">
+              To connect people with trusted wellness experts, transformative live classes and
+              coaching, and supportive communities that nurture the body, mind, emotions, and spirit.
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <Eyebrow>Where We're Headed</Eyebrow>
+            <Prose className="mt-5">
+              <p>
+                From Ottawa to India to the world — Amoda is building toward becoming the first name
+                people think of when they seek trusted wellness support. Not just a platform. A
+                global village of wellness.
+              </p>
+            </Prose>
+            <div className="mt-8 flex flex-wrap gap-4">
               <QuietLink to="/about/how-it-works" variant="outline">
-                How Amoda works
+                How Amoda Works
+              </QuietLink>
+              <QuietLink to="/practitioners" variant="quiet">
+                Meet Our Practitioners
               </QuietLink>
             </div>
           </Reveal>
         </div>
       </Section>
 
-      <Section>
-        <Reveal className="max-w-[44ch]">
-          <Eyebrow>What we believe</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">Four commitments we hold to.</h2>
-        </Reveal>
-        <dl className="mt-12 grid gap-8 sm:grid-cols-2">
-          {values.map((value, index) => (
-            <Reveal key={value.title} delay={index * 90} className="emboss p-7">
-              <dt className="type-h3 text-ink">{value.title}</dt>
-              <dd className="mt-3 text-[0.9375rem] leading-relaxed text-ink/75">{value.body}</dd>
-            </Reveal>
-          ))}
-        </dl>
-      </Section>
-
       <Section tone="ink">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <LotusMark variant="ring" ground="dark" className="mx-auto w-14" />
+            <div className="mt-8">
+              <Eyebrow tone="sage">Our Manifesto</Eyebrow>
+            </div>
             <div className="mt-8 space-y-6">
               {manifesto.map((line) => (
                 <p key={line} className="type-h2 text-parchment">

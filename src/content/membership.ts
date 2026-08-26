@@ -1,77 +1,74 @@
+/** Membership page copy — verbatim from the approved content document (v2). */
+
+export const seo = {
+  title: "Join Amoda Wellness Membership | Global Wellness Community",
+  description:
+    "Become an Amoda member for community, live classes, coaching discounts, and corporate wellness partnerships.",
+} as const;
+
+export const intro = {
+  headline: "This is more than membership. It's a wellness home.",
+  body: "When you join Amoda, you're not signing up for another app you'll forget about. You're joining a community that shows up — for live classes, coaching, accountability, and connection.",
+  cta: "Join the Waitlist",
+} as const;
+
 export const included = [
-  "Access to the Amoda community and accountability groups",
-  "One recurring free live class every week, across rotating categories",
-  "Member pricing on 1:1 coaching and live classes",
+  "Private community space (belonging + accountability)",
+  "Live classes & coaching discounts",
+  "Access to member-only events, including the weekly free live class",
   "Early access to new categories, retreats, and Shoppe drops",
-  "A direct line to practitioner recommendations — a real person, not a quiz",
+  "Direct line to practitioner recommendations",
 ];
 
 export const tiers = [
   {
-    name: "Community",
-    price: "Free",
+    name: "Community (Free)",
     bestFor: "Getting started",
-    includes: [
-      "Community access",
-      "Newsletter",
-      "Weekly free live class",
-    ],
-    cta: "Join free",
+    includes: "Community access, newsletter, weekly free live class",
     featured: false,
   },
   {
     name: "Amoda Member",
-    price: "CA$29 / month",
     bestFor: "Ongoing support",
-    includes: [
-      "Everything in Community",
-      "Member pricing on coaching and classes",
-      "Accountability groups",
-      "Early access to retreats and Shoppe drops",
-    ],
-    cta: "Join the waitlist",
+    includes: "Full community + coaching/class discounts",
     featured: true,
   },
   {
     name: "Founding Member",
-    price: "CA$249 / year",
     bestFor: "Early adopters",
-    includes: [
-      "Everything in Amoda Member",
-      "Lifetime early access",
-      "Founding pricing, held as we grow",
-      "A say in which categories we open next",
-    ],
-    cta: "Join the waitlist",
+    includes: "Everything above + lifetime early access + founding pricing",
     featured: false,
   },
 ];
 
 export const corporate = {
   headline: "Wellness isn't a perk. It's a performance strategy.",
-  body: "Burned-out teams don't build sustainable companies. Amoda partners with organisations to bring real, practitioner-led health coaching, life coaching, nutrition, yoga, and diabetic wellness support to the people doing the work.",
+  body: "Burned-out teams don't build sustainable companies. Amoda partners with organizations to bring real, practitioner-led health coaching, life coaching, nutrition, yoga, and diabetic wellness support to the people doing the work.",
+  offerTitle: "What we offer:",
   offer: [
-    "Live practitioner-led sessions for teams, held on your schedule",
-    "1:1 coaching allocations employees book themselves, privately",
-    "Category programmes — nutrition, yoga, diabetic wellness — run over a term",
-    "Quarterly reporting on participation, never on individual health data",
+    "Live group coaching and classes for teams",
+    "Nutrition and diabetic-wellness workshops",
+    "Stress reduction & resilience sessions",
+    "Custom program design for your organization's needs",
   ],
+  cta: "Book a Corporate Consultation",
 };
 
-export const retreats = [
-  {
-    name: "Local Retreats",
-    body: "Single-day and weekend retreats in Ontario and Québec, held small — twelve people, two practitioners.",
-    status: "Waitlist open",
-  },
-  {
-    name: "Global & India Wellness Journeys",
-    body: "Ten-day journeys built with practitioners on the ground in Kerala and Rishikesh. Real lineage, no costume.",
-    status: "Waitlist open",
-  },
-  {
-    name: "Virtual International Experiences",
-    body: "Live multi-day experiences you join from anywhere, with practitioners in three time zones.",
-    status: "Waitlist open",
-  },
-];
+export const retreats = {
+  headline: "Wellness worth traveling for.",
+  cta: "Join the Waitlist for Upcoming Retreats",
+  items: [
+    {
+      name: "Local Retreats",
+      body: "Weekend and multi-day retreats close to home.",
+    },
+    {
+      name: "Global & India Wellness Journeys",
+      body: "Immersive journeys into Ayurveda, yoga, and traditional wellness at the source.",
+    },
+    {
+      name: "Virtual International Experiences",
+      body: "Global wellness wisdom from wherever you are.",
+    },
+  ],
+};

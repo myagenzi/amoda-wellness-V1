@@ -80,7 +80,7 @@ export function PractitionerApplicationForm() {
         <TextArea {...register("about")} invalid={!!errors.about} />
       </Field>
       <QuietButton type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Sending…" : "Apply to join Amoda"}
+        {isSubmitting ? "Sending…" : "Apply to Join Amoda"}
       </QuietButton>
     </form>
   );

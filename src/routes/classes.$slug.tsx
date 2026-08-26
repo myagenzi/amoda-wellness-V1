@@ -47,15 +47,15 @@ function CategoryPage() {
             <Prose className="mt-6">
               <p>{category.subheadline}</p>
             </Prose>
-            <p className="type-caption mt-6 text-leaf">{category.format}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <QuietLink to="/contact" size="lg">
-                Enquire about a session
+                {category.cta}
               </QuietLink>
               <QuietLink to="/practitioners" variant="quiet">
-                See who teaches this
+                Meet the Practitioner
               </QuietLink>
             </div>
+
           </Reveal>
           <Reveal delay={150}>
             <img
@@ -75,7 +75,7 @@ function CategoryPage() {
             <Eyebrow>Who this is for</Eyebrow>
             <p className="type-h2 mt-5 text-ink">{category.forWhom}</p>
             <PetalDivider className="mt-8 w-24" />
-            <Eyebrow>What you leave with</Eyebrow>
+            <Eyebrow>What you'll walk away with</Eyebrow>
             <p className="mt-4 max-w-[56ch] text-ink/80">{category.outcome}</p>
           </Reveal>
           <Reveal delay={120}>
@@ -99,7 +99,7 @@ function CategoryPage() {
         <Section tone="sage">
           <Reveal className="max-w-[44ch]">
             <Eyebrow>Practitioners</Eyebrow>
-            <h2 className="type-h1 mt-5 text-ink">Who holds this work.</h2>
+            <h2 className="type-h1 mt-5 text-ink">Meet the Practitioner</h2>
           </Reveal>
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {matched.map((practitioner, index) => (
@@ -123,9 +123,7 @@ function CategoryPage() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
           <Reveal>
             <Eyebrow withDot>Enquire</Eyebrow>
-            <h2 className="type-h1 mt-5 max-w-[22ch] text-ink">
-              Send a note. A person replies.
-            </h2>
+            <h2 className="type-h1 mt-5 max-w-[22ch] text-ink">{category.cta}</h2>
             <Prose className="mt-5">
               <p>
                 We're not taking online bookings yet — on purpose. Tell us a little and we'll come
@@ -135,7 +133,7 @@ function CategoryPage() {
             </Prose>
           </Reveal>
           <Reveal delay={130} className="emboss p-7 sm:p-9">
-            <EnquiryForm subject={category.name} cta="Send enquiry" />
+            <EnquiryForm subject={category.name} cta={category.cta} />
           </Reveal>
         </div>
       </Section>

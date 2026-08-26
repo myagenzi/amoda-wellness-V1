@@ -4,26 +4,25 @@ import { Reveal } from "@/components/site/Reveal";
 import { PractitionerApplicationForm } from "@/components/forms/PractitionerApplicationForm";
 
 const expectations = [
-  "Verified certification in your practice area — we check at the source.",
-  "At least three years of real client practice, with references we can call.",
-  "Comfort holding live sessions online, 1:1 and in small groups.",
-  "Honesty about scope: what your approach does, and where you refer out.",
+  "Verified certification & experience",
+  "Genuine care for client outcomes",
+  "Alignment with whole-person wellness values",
 ];
 
 export const Route = createFileRoute("/practitioners/apply")({
   head: () => ({
     meta: [
-      { title: "Become a Practitioner — Apply to Join | Amoda Wellness" },
+      { title: "Become a Practitioner | Amoda Wellness" },
       {
         name: "description",
         content:
-          "Apply to join the Amoda practitioner network. A curated, not crowded platform for certified coaches, nutritionists and yoga teachers holding live sessions.",
+          "Amoda is building a curated — not crowded — network of wellness practitioners. Apply to bring your gift to a global community that values it.",
       },
       { property: "og:title", content: "Become an Amoda Practitioner" },
       {
         property: "og:description",
         content:
-          "A small, vetted network. Verified credentials, real references, honest practice — apply to join.",
+          "Bring your gift to a global community that values it. Apply to join Amoda's curated practitioner network.",
       },
     ],
   }),
@@ -35,19 +34,15 @@ function ApplyPage() {
     <>
       <Section>
         <Reveal className="max-w-[54ch]">
-          <Eyebrow withDot>Become a practitioner</Eyebrow>
+          <Eyebrow withDot>Become a Practitioner</Eyebrow>
           <h1 className="type-hero mt-6 text-ink">
-            Practise where the standard is the point.
+            Bring your gift to a global community that values it.
           </h1>
           <Prose className="mt-6">
             <p>
-              Amoda is built to be small. We take a limited number of practitioners in each
-              category, verify everything, and then get out of the way — you keep your own approach,
-              your own voice, and your own client relationships.
-            </p>
-            <p>
-              What you get is a platform that doesn't ask you to compete on price against a thousand
-              unverified profiles, and clients who arrive already trusting the room.
+              Amoda is building a curated — not crowded — network of wellness practitioners. If
+              you're certified, ethical, and passionate about real transformation, we'd love to meet
+              you.
             </p>
           </Prose>
         </Reveal>
@@ -68,9 +63,7 @@ function ApplyPage() {
                 </li>
               ))}
             </ul>
-            <p className="type-caption mt-6 text-leaf">
-              Vetting takes about two weeks: credentials, references, and one long conversation.
-            </p>
+            <p className="type-caption mt-6 text-leaf">Apply to Join Amoda</p>
           </Reveal>
           <Reveal delay={130} className="emboss p-7 sm:p-9">
             <PractitionerApplicationForm />

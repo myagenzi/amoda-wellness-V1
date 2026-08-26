@@ -1,3 +1,8 @@
+/**
+ * Category pages — the document's "Diabetic Solutions" template structure,
+ * populated only with the document's own wording for each category.
+ */
+
 export type CategorySlug =
   | "health-coaching"
   | "life-coaching"
@@ -8,6 +13,7 @@ export type CategorySlug =
 export type Category = {
   slug: CategorySlug;
   name: string;
+  /** Overview-page card one-liner (verbatim). */
   short: string;
   seoTitle: string;
   metaDescription: string;
@@ -16,105 +22,109 @@ export type Category = {
   forWhom: string;
   included: string[];
   outcome: string;
-  format: string;
+  cta: string;
 };
 
 export const categories: Category[] = [
   {
     slug: "health-coaching",
     name: "Health Coaching",
-    short: "Live 1:1 and small-group coaching for energy, sleep, and steady habits.",
-    seoTitle: "Health Coaching — Live 1:1 & Small Group | Amoda Wellness",
+    short:
+      "1:1 and small-group coaching for energy, habits, and whole-body wellbeing.",
+    seoTitle: "Health Coaching | Amoda Wellness",
     metaDescription:
-      "Live health coaching with vetted practitioners — energy, sleep, stress and habits, session to session. Book a live class or 1:1 session with Amoda.",
-    headline: "Energy that holds up through the week — not just on Sunday.",
+      "Live, practitioner-led health coaching for energy, habits, and whole-body wellbeing.",
+    headline: "1:1 and small-group coaching for energy, habits, and whole-body wellbeing.",
     subheadline:
-      "Live coaching with certified practitioners who work with your actual routine, not an idealised version of it.",
+      "Live coaching and guidance from practitioners who understand the day-to-day of energy, habits, and whole-body wellbeing.",
     forWhom:
-      "Anyone carrying more than they can sustain — poor sleep, flat energy, a body that feels unfamiliar — who wants a practitioner who remembers the last conversation.",
+      "Anyone working on energy, habits, and whole-body wellbeing — who wants practical, judgment-free guidance instead of generic advice.",
     included: [
-      "Live 1:1 sessions, or small-group classes if you prefer company",
-      "A practical starting plan built around your week, not a template",
-      "Honest guidance about what a practice delivers, and when",
-      "Direct access to book follow-up sessions with the same practitioner",
+      "Live 1:1 or small-group sessions with certified health coaches",
+      "Practical nutrition and lifestyle guidance built around real routines",
+      "Optional community accountability group",
+      "Direct access to book follow-up sessions",
     ],
     outcome:
-      "A short list of things that actually work for your body, and someone who knows your history well enough to adjust them.",
-    format: "Live online · 1:1 or small group · 45–60 minutes",
+      "A clearer, calmer relationship with managing your health — and a practitioner who actually knows your situation, session to session.",
+    cta: "Book a Session",
   },
   {
     slug: "life-coaching",
     name: "Life Coaching",
-    short: "Space to think clearly about work, transition, and what comes next.",
-    seoTitle: "Life Coaching — Live Sessions with Vetted Coaches | Amoda Wellness",
+    short:
+      "Guidance for the transitions, decisions, and \u201cwho am I now?\u201d chapters of life.",
+    seoTitle: "Life Coaching | Amoda Wellness",
     metaDescription:
-      "Live 1:1 life coaching for transition, burnout and clarity — with vetted, credentialed practitioners. Book a session with Amoda Wellness.",
-    headline: "Somewhere between the career and the caregiving, you got lost in the list.",
+      "Live, practitioner-led life coaching for the transitions, decisions, and \u201cwho am I now?\u201d chapters of life.",
+    headline:
+      "Guidance for the transitions, decisions, and \u201cwho am I now?\u201d chapters of life.",
     subheadline:
-      "Live 1:1 coaching for people in transition — with practitioners who ask better questions than an app ever will.",
+      "Live coaching and guidance from practitioners who understand the day-to-day of transitions, decisions, and the \u201cwho am I now?\u201d chapters of life.",
     forWhom:
-      "Women 40+ rebuilding on their own terms, founders running on output, anyone at the edge of a decision they keep deferring.",
+      "Anyone in a transition, facing a decision, or in a \u201cwho am I now?\u201d chapter of life — who wants practical, judgment-free guidance instead of generic advice.",
     included: [
-      "Live 1:1 sessions with a certified coach matched to your situation",
-      "A clear focus for each session, agreed before you start",
-      "Optional community accountability group between sessions",
-      "No scripts, no manifestation language, no homework you won't do",
+      "Live 1:1 or small-group sessions with certified life coaches",
+      "Practical lifestyle guidance built around real routines",
+      "Optional community accountability group",
+      "Direct access to book follow-up sessions",
     ],
     outcome:
-      "Language for what you actually want, and a next step small enough to take this week.",
-    format: "Live online · 1:1 · 50 minutes",
+      "A clearer, calmer relationship with the chapter you're in — and a practitioner who actually knows your situation, session to session.",
+    cta: "Book a Session",
   },
   {
     slug: "nutrition",
     name: "Nutrition",
-    short: "Food guidance built on your real kitchen, culture, and schedule.",
-    seoTitle: "Nutrition Coaching — Live, Practitioner-Led | Amoda Wellness",
+    short: "Live consulting and classes for sustainable, judgment-free eating.",
+    seoTitle: "Nutrition Consulting & Classes | Amoda Wellness",
     metaDescription:
-      "Live nutrition coaching from credentialed practitioners — practical, cultural, judgment-free guidance built around your real routine. Book with Amoda.",
-    headline: "Food guidance that survives a Tuesday.",
+      "Live consulting and classes for sustainable, judgment-free eating, led by trusted Amoda practitioners.",
+    headline: "Live consulting and classes for sustainable, judgment-free eating.",
     subheadline:
-      "Live nutrition sessions with practitioners who plan around your kitchen, your culture, and the time you actually have.",
+      "Live consulting and nutrition guidance from practitioners who understand the day-to-day of eating well.",
     forWhom:
-      "Anyone tired of elimination lists and macro apps who wants specific, workable guidance from a credentialed practitioner.",
+      "Anyone working toward sustainable, judgment-free eating — who wants practical guidance instead of generic advice.",
     included: [
-      "Live 1:1 nutrition consults with a certified practitioner",
-      "Guidance that works with the food you already cook and eat",
-      "Practical adjustments reviewed session to session",
-      "Group nutrition classes for foundations, if you'd rather start there",
+      "Live 1:1 or small-group sessions with certified nutrition experts",
+      "Practical nutrition and lifestyle guidance built around real routines",
+      "Optional community accountability group",
+      "Direct access to book follow-up sessions",
     ],
     outcome:
-      "A way of eating you can keep, described plainly, with no moralising about food.",
-    format: "Live online · 1:1 or group class · 45 minutes",
+      "A clearer, calmer relationship with food — and a practitioner who actually knows your situation, session to session.",
+    cta: "Book a Session",
   },
   {
     slug: "yoga",
     name: "Yoga Classes",
-    short: "Live, small-format classes for every body and every level.",
-    seoTitle: "Live Yoga Classes — Small Format, All Levels | Amoda Wellness",
+    short: "Live online yoga for every level — strength, flexibility, and calm.",
+    seoTitle: "Live Online Yoga Classes | Amoda Wellness",
     metaDescription:
-      "Live online yoga classes with vetted teachers — restorative, gentle and strength-building, planned for every body and every level. Join a class with Amoda.",
-    headline: "A room where nobody is watching your form but the teacher.",
+      "Live online yoga for every level — strength, flexibility, and calm, with trusted Amoda teachers.",
+    headline: "Live online yoga for every level — strength, flexibility, and calm.",
     subheadline:
-      "Live small-format classes with teachers who plan for every body from the start — not as an accommodation afterwards.",
+      "Live classes and guidance from yoga teachers who understand the day-to-day of building strength, flexibility, and calm.",
     forWhom:
-      "Beginners, returners after injury or a long pause, and long-time practitioners who want real instruction instead of a video.",
+      "Anyone at any level looking for strength, flexibility, and calm — who wants practical, judgment-free guidance instead of generic advice.",
     included: [
-      "Live small-group classes — restorative, gentle, and strength-building",
-      "Teachers who cue for your body, with options offered before you need them",
-      "A weekly free class if you'd like to sample a teacher first",
-      "1:1 sessions available where you'd rather work privately",
+      "Live 1:1 or small-group classes with certified yoga teachers",
+      "Practical movement and lifestyle guidance built around real routines",
+      "Optional community accountability group",
+      "Direct access to book follow-up sessions",
     ],
     outcome:
-      "A practice you return to because it fits — not because you feel guilty when you skip it.",
-    format: "Live online · small group or 1:1 · 45–60 minutes",
+      "A clearer, calmer relationship with your body — and a teacher who actually knows your situation, session to session.",
+    cta: "Book a Session",
   },
   {
     slug: "diabetic-solutions",
     name: "Diabetic Solutions",
-    short: "Practitioner-led diabetic wellness coaching and nutrition support.",
-    seoTitle: "Diabetic Solutions — Live Coaching & Nutrition | Amoda Wellness",
+    short:
+      "Specialized coaching and nutrition support for managing and living well with diabetes.",
+    seoTitle: "Diabetic Wellness Coaching & Nutrition | Amoda Wellness",
     metaDescription:
-      "Live, practitioner-led diabetic wellness coaching and nutrition support — practical, judgment-free, and built for real life. Book a session with Amoda.",
+      "Live, practitioner-led diabetic wellness coaching and nutrition support — practical, judgment-free, and built for real life.",
     headline: "Living well with diabetes, with real support — not just a meal plan.",
     subheadline:
       "Live coaching and nutrition guidance from practitioners who understand the day-to-day of managing diabetes.",
@@ -128,9 +138,17 @@ export const categories: Category[] = [
     ],
     outcome:
       "A clearer, calmer relationship with managing your health — and a practitioner who actually knows your situation, session to session.",
-    format: "Live online · 1:1 or small group · 45–60 minutes",
+    cta: "Book a Session",
   },
 ];
 
-export const categoryBySlug = (slug: string) =>
-  categories.find((category) => category.slug === slug);
+export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);
+
+/** Practitioners page — "Filter/Browse by" list (verbatim). */
+export const browseLabels: Record<CategorySlug, string> = {
+  "health-coaching": "Health Coaches",
+  "life-coaching": "Life Coaches",
+  nutrition: "Nutrition Experts",
+  yoga: "Yoga Teachers",
+  "diabetic-solutions": "Diabetic Wellness Specialists",
+};

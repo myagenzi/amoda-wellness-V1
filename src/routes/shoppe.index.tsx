@@ -2,24 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { QuietLink } from "@/components/site/QuietButton";
-import { products } from "@/content/shoppe";
+import { boxCategory, products, shoppeIntro, shoppeSeo, toolCategory } from "@/content/shoppe";
 import shoppeImage from "@/assets/shoppe-still-life.jpg";
 
 export const Route = createFileRoute("/shoppe/")({
   head: () => ({
     meta: [
-      { title: "The Shoppe — Practitioner-Chosen Wellness Tools | Amoda" },
-      {
-        name: "description",
-        content:
-          "Seasonal boxes and wellness tools chosen by Amoda practitioners — brass neti pots, kansa wands, undyed cotton straps and small-batch stoneware. Enquire to order.",
-      },
-      { property: "og:title", content: "The Amoda Shoppe" },
-      {
-        property: "og:description",
-        content:
-          "A short list of things worth owning, chosen by the practitioners who use them. Seasonal boxes and tools.",
-      },
+      { title: shoppeSeo.title },
+      { name: "description", content: shoppeSeo.description },
+      { property: "og:title", content: shoppeSeo.title },
+      { property: "og:description", content: shoppeSeo.description },
     ],
   }),
   component: ShoppeIndex,
@@ -35,18 +27,9 @@ function ShoppeIndex() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
           <Reveal>
             <Eyebrow withDot>The Shoppe</Eyebrow>
-            <h1 className="type-hero mt-6 max-w-[20ch] text-ink">
-              A short list of things worth owning.
-            </h1>
+            <h1 className="type-hero mt-6 max-w-[20ch] text-ink">{shoppeIntro.headline}</h1>
             <Prose className="mt-6">
-              <p>
-                Everything here is something one of our practitioners keeps on their own shelf. We
-                stock one version of each thing, because we only found one worth stocking.
-              </p>
-              <p>
-                Online checkout is coming. For now, send an enquiry and we'll confirm availability,
-                shipping and payment by email — usually the same day.
-              </p>
+              <p>{shoppeIntro.body}</p>
             </Prose>
           </Reveal>
           <Reveal delay={140}>
@@ -63,8 +46,9 @@ function ShoppeIndex() {
 
       <Section tone="card">
         <Reveal className="max-w-[44ch]">
-          <Eyebrow>Seasonal boxes</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">Assembled twice a year.</h2>
+          <Eyebrow>The Shoppe</Eyebrow>
+          <h2 className="type-h1 mt-5 text-ink">{boxCategory.name}</h2>
+          <p className="mt-4 text-ink/80">{boxCategory.body}</p>
         </Reveal>
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {boxes.map((product, index) => (
@@ -81,7 +65,7 @@ function ShoppeIndex() {
                 <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink/75">
                   {product.summary}
                 </p>
-                <span className="type-label mt-auto pt-6 text-leaf">View the box →</span>
+                <span className="type-label mt-auto pt-6 text-leaf">Enquire about this →</span>
               </Link>
             </Reveal>
           ))}
@@ -90,8 +74,9 @@ function ShoppeIndex() {
 
       <Section tone="sage">
         <Reveal className="max-w-[44ch]">
-          <Eyebrow>Tools</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">One version of each thing.</h2>
+          <Eyebrow>The Shoppe</Eyebrow>
+          <h2 className="type-h1 mt-5 text-ink">{toolCategory.name}</h2>
+          <p className="mt-4 text-ink/80">{toolCategory.body}</p>
         </Reveal>
         <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tools.map((product, index) => (

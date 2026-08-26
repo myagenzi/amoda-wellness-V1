@@ -1,6 +1,6 @@
 export const site = {
   name: "Amoda Wellness",
-  tagline: "ancient roots, modern results",
+  tagline: "Global Wellness. Community. Transformation.",
   promise: "Amoda connects you to YOURSELF through trusted practitioners.",
   email: "hello@amodawellness.com",
   base: "Ottawa, Canada · serving globally",
@@ -33,9 +33,16 @@ export const interestOptions = [
   "Other",
 ] as const;
 
+/** Section 5 — Free Live Class Banner (verbatim). */
 export const freeClass = {
   eyebrow: "Free live class this week",
-  title: "Breath before anything else — a 30-minute reset.",
-  body: "One recurring free live class, rotating through our categories. No pressure, no upsell at the end. Come as you are, and see whether a practitioner is right for you.",
-  detail: "Thursdays · 8:00am ET · 30 minutes · hosted live on Zoom",
+  title: "Try Amoda for free — no card, no commitment.",
+  body: "Every week, we open one live class to everyone — free. This week: Yoga Classes with Hannah Osei.",
+  cta: "Reserve Your Free Spot",
+} as const;
+
+/** Footer newsletter capture (verbatim). */
+export const newsletter = {
+  headline: "Join our community of wellness seekers.",
+  body: "Get early access to new categories, retreats, and Shoppe drops — plus real wellness guidance, straight to your inbox.",
 } as const;

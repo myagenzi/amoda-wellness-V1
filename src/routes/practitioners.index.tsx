@@ -2,40 +2,25 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { QuietLink } from "@/components/site/QuietButton";
-import { EcosystemIcon } from "@/components/brand/EcosystemIcon";
 import { practitioners } from "@/content/practitioners";
-import { categories } from "@/content/categories";
+import { browseLabels, categories } from "@/content/categories";
+import { trust } from "@/content/home";
 
-const vetting = [
-  {
-    title: "Credentials, verified",
-    body: "Every certification is checked at the source. If it can't be verified, the practitioner isn't listed.",
-  },
-  {
-    title: "References, called",
-    body: "We speak to past clients and peers. We ask what the practitioner's approach does not do.",
-  },
-  {
-    title: "Ethics, in conversation",
-    body: "A long conversation about scope, referral, and honesty. Anyone who overclaims doesn't join.",
-  },
-];
+const seo = {
+  title: "Find a Trusted Wellness Practitioner | Amoda Wellness",
+  description:
+    "Browse Amoda's vetted network of health coaches, life coaches, nutritionists, yoga teachers, and diabetic wellness specialists — live and online.",
+};
+
+const filters = ["Language", "Availability", "Session Type (1:1 / Group)"];
 
 export const Route = createFileRoute("/practitioners/")({
   head: () => ({
     meta: [
-      { title: "Our Practitioners — Vetted, Credentialed, Live | Amoda Wellness" },
-      {
-        name: "description",
-        content:
-          "Meet the Amoda practitioners: certified coaches, nutritionists and yoga teachers across Canada, India and the UK — vetted on credentials, references and ethics.",
-      },
-      { property: "og:title", content: "Our Practitioners | Amoda Wellness" },
-      {
-        property: "og:description",
-        content:
-          "Curated, not crowded. Every practitioner verified on credentials, references and ethics before they appear here.",
-      },
+      { title: seo.title },
+      { name: "description", content: seo.description },
+      { property: "og:title", content: seo.title },
+      { property: "og:description", content: seo.description },
     ],
   }),
   component: PractitionersIndex,
@@ -49,19 +34,48 @@ function PractitionersIndex() {
       <Section>
         <Reveal className="max-w-[54ch]">
           <Eyebrow withDot>Practitioners</Eyebrow>
-          <h1 className="type-hero mt-6 text-ink">Curated, not crowded.</h1>
+          <h1 className="type-hero mt-6 text-ink">Every practitioner here has earned your trust.</h1>
           <Prose className="mt-6">
             <p>
-              We list a small number of practitioners because vetting takes time and we refuse to
-              shortcut it. Each one below was assessed on verified credentials, real references, and
-              a long conversation about ethics and scope.
+              We don't list everyone. We curate carefully — checking certifications, experience, and
+              ethical standards — so you can book with confidence.
             </p>
           </Prose>
+        </Reveal>
+
+        <Reveal delay={120} className="mt-10">
+          <ul className="flex flex-wrap gap-x-8 gap-y-3 border-y border-[var(--hairline)] py-5">
+            {trust.strip.map((item) => (
+              <li key={item} className="type-label text-leaf">
+                ✓ {item}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </Section>
 
       <Section tone="card">
-        <ul className="grid gap-6 md:grid-cols-2">
+        <Reveal>
+          <Eyebrow>Filter / Browse by</Eyebrow>
+          <ul className="mt-6 flex flex-wrap gap-3">
+            {categories.map((category) => (
+              <li key={category.slug}>
+                <QuietLink
+                  to={`/classes/${category.slug}`}
+                  variant="outline"
+                  size="sm"
+                >
+                  {browseLabels[category.slug]}
+                </QuietLink>
+              </li>
+            ))}
+          </ul>
+          <p className="type-caption mt-6 text-muted-foreground">
+            Filter by: {filters.join(" | ")}
+          </p>
+        </Reveal>
+
+        <ul className="mt-12 grid gap-6 md:grid-cols-2">
           {practitioners.map((practitioner, index) => (
             <Reveal as="li" key={practitioner.slug} delay={index * 80}>
               <Link
@@ -69,8 +83,9 @@ function PractitionersIndex() {
                 params={{ slug: practitioner.slug }}
                 className="emboss emboss-lift flex h-full flex-col p-7 no-underline"
               >
-                <h2 className="type-h2 text-ink">{practitioner.name}</h2>
-                <p className="type-caption mt-2 text-leaf">{practitioner.title}</p>
+                <h2 className="type-h2 text-ink">
+                  {practitioner.name} — {practitioner.title}
+                </h2>
                 <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink/75">
                   {practitioner.approach}
                 </p>
@@ -100,32 +115,19 @@ function PractitionersIndex() {
         </ul>
       </Section>
 
-      <Section tone="ink">
-        <Reveal className="max-w-[46ch]">
-          <Eyebrow tone="sage">How we vet</Eyebrow>
-          <h2 className="type-h1 mt-5 text-parchment">Three gates, no exceptions.</h2>
-        </Reveal>
-        <dl className="mt-12 grid gap-10 md:grid-cols-3">
-          {vetting.map((item, index) => (
-            <Reveal key={item.title} delay={index * 110}>
-              <EcosystemIcon name="trust" className="text-sage" />
-              <dt className="type-h3 mt-5 text-parchment">{item.title}</dt>
-              <dd className="mt-3 text-[0.9375rem] leading-relaxed text-sage/85">{item.body}</dd>
-            </Reveal>
-          ))}
-        </dl>
-      </Section>
-
       <Section tone="sage">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="type-h1 text-ink">Are you a practitioner?</h2>
+          <h2 className="type-h1 text-ink">Not Sure Who to Book?</h2>
           <p className="mt-4 text-ink/80">
-            We're opening a small number of places across our five categories. If verified
-            certification and honest practice describe your work, we'd like to hear from you.
+            Take the Matching Quiz — tell us what you're looking for and a person will suggest a
+            practitioner.
           </p>
-          <div className="mt-8">
-            <QuietLink to="/practitioners/apply" size="lg">
-              Apply to join Amoda
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <QuietLink to="/contact" size="lg">
+              Take the Matching Quiz
+            </QuietLink>
+            <QuietLink to="/practitioners/apply" variant="outline">
+              Become a Practitioner
             </QuietLink>
           </div>
         </Reveal>
