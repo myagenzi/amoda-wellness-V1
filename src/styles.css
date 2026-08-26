@@ -225,8 +225,9 @@
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--ink) 74%, transparent) 0%,
-    color-mix(in oklab, var(--ink) 46%, transparent) 42%,
-    color-mix(in oklab, var(--ink) 78%, transparent) 100%
+    color-mix(in oklab, var(--ink) 44%, transparent) 38%,
+    color-mix(in oklab, var(--ink) 68%, transparent) 74%,
+    color-mix(in oklab, var(--ink) 90%, transparent) 100%
   );
 }
 
