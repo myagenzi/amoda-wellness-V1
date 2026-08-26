@@ -46,7 +46,7 @@ function Home() {
   return (
     <>
       {/* 1 — Hero: video stage, parchment type on an ink scrim */}
-      <section className="relative -mt-[var(--header-h)] flex min-h-[94svh] flex-col justify-center overflow-hidden px-5 pt-[calc(var(--header-h)+2.5rem)] pb-[14rem] sm:px-8 md:min-h-[100svh] md:pt-[calc(var(--header-h)+4rem)] md:pb-[11rem]">
+      <section className="relative -mt-[var(--header-h)] flex min-h-[94svh] flex-col justify-center overflow-hidden px-5 pt-[calc(var(--header-h)+2rem)] pb-[13rem] sm:px-8 md:min-h-[100svh] md:pt-[calc(var(--header-h)+3rem)] md:pb-[9.5rem]">
         <HeroVideo />
         <div className="mx-auto w-full max-w-6xl">
           <Reveal className="max-w-[46rem]">
