@@ -74,7 +74,7 @@ export function Header() {
             </Link>
           ))}
 
-          <div className="flex items-center gap-1 pl-1">
+          <div className="flex shrink-0 items-center gap-1 pl-1">
             <HeaderSearch onInk={onInk} />
             <Link
               to="/shoppe"
@@ -90,7 +90,7 @@ export function Header() {
               to="/membership"
               size="sm"
               variant={onInk ? "onInk" : "leaf"}
-              className="ml-2 whitespace-nowrap"
+              className="ml-2 shrink-0 whitespace-nowrap"
             >
               Join Amoda
             </QuietLink>
