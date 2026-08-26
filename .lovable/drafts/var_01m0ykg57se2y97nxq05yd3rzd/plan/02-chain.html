@@ -1,0 +1,44 @@
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" style="font-family: var(--font-sans)">
+  <style>
+    .lbl { font-size: 14px; font-weight: 480; fill: hsl(var(--foreground)); }
+    .note { font-size: 12px; fill: hsl(var(--muted-foreground)); }
+    .mono { font-size: 12px; fill: hsl(var(--muted-foreground)); font-family: var(--font-mono); }
+    .bx { fill: none; stroke: hsl(var(--muted-foreground)); stroke-width: 1; }
+    .rail { stroke: hsl(var(--border)); stroke-width: 1; }
+  </style>
+
+  <text x="0" y="14" class="note">ancestor chain from the sticky column up to the viewport</text>
+
+  <rect x="0" y="30" width="300" height="34" rx="8" class="bx"/>
+  <text x="14" y="52" class="lbl">body / layout wrapper / main</text>
+  <text x="320" y="52" class="mono">overflow: visible</text>
+
+  <line x1="150" y1="64" x2="150" y2="86" class="rail"/>
+
+  <rect x="0" y="86" width="300" height="46" rx="8" fill="none" stroke="hsl(var(--accent))" stroke-width="1"/>
+  <text x="14" y="107" class="lbl">section #what-amoda-is</text>
+  <text x="14" y="124" class="mono">overflow: hidden  ← remove</text>
+  <circle cx="320" cy="103" r="9" fill="hsl(var(--accent))"/>
+  <text x="316" y="107" style="font-size:11px; font-weight:600" fill="hsl(var(--accent-foreground))">1</text>
+  <text x="338" y="100" class="note">this ancestor becomes the sticky</text>
+  <text x="338" y="115" class="note">scroll container, so nothing pins</text>
+
+  <line x1="150" y1="132" x2="150" y2="154" class="rail"/>
+
+  <rect x="0" y="154" width="300" height="34" rx="8" class="bx"/>
+  <text x="14" y="176" class="lbl">grid  400px / 1fr</text>
+  <text x="320" y="176" class="mono">overflow: visible</text>
+
+  <line x1="80" y1="188" x2="80" y2="210" class="rail"/>
+  <line x1="230" y1="188" x2="230" y2="210" class="rail"/>
+
+  <rect x="0" y="210" width="150" height="52" rx="8" class="bx"/>
+  <text x="14" y="232" class="lbl">left column</text>
+  <text x="14" y="249" class="mono">sticky · self-start · 471px</text>
+
+  <rect x="166" y="210" width="134" height="52" rx="8" class="bx"/>
+  <text x="180" y="232" class="lbl">6 cards</text>
+  <text x="180" y="249" class="mono">3273px — sets height</text>
+
+  <text x="0" y="288" class="note">section 3657px = cards 3273px + lg:py-48 (384px) — the padding is the dead space</text>
+</svg>
