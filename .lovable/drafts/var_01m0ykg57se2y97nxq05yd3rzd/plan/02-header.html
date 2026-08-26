@@ -1,0 +1,50 @@
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" style="font-family: var(--font-sans)">
+  <style>
+    .lbl { font-size: 12px; fill: hsl(var(--muted-foreground)); }
+    .box { font-size: 14px; font-weight: 480; fill: hsl(var(--foreground)); }
+    .r { fill: none; stroke: hsl(var(--muted-foreground)); stroke-width: 1; }
+    .zone { fill: none; stroke: hsl(var(--border)); stroke-width: 1; stroke-dasharray: 4 3; }
+    .q { fill: hsl(var(--muted)); }
+    .g { fill: hsl(var(--border)); }
+  </style>
+
+  <!-- top state -->
+  <text class="lbl" x="0" y="12">top of homepage — transparent over video</text>
+  <rect class="q" x="0" y="22" width="640" height="110" rx="8"/>
+  <rect class="zone" x="0" y="22" width="640" height="34"/>
+  <text class="box" x="12" y="44">AMODA</text>
+  <text class="lbl" x="150" y="43">About</text>
+  <text class="lbl" x="205" y="43">Live Classes</text>
+  <text class="lbl" x="290" y="43">Practitioners</text>
+  <text class="lbl" x="375" y="43">Membership</text>
+  <circle class="r" cx="470" cy="39" r="8"/><text class="lbl" x="463" y="43">Q</text>
+  <circle class="r" cx="500" cy="39" r="8"/><text class="lbl" x="494" y="43">C</text>
+  <rect x="522" y="29" width="94" height="20" rx="10" fill="hsl(var(--accent))"/>
+  <text class="lbl" x="540" y="43" style="fill: hsl(var(--accent-foreground))">Join Amoda</text>
+
+  <text class="box" x="20" y="90" style="fill: hsl(var(--foreground))">Wellness isn't a destination.</text>
+  <rect class="g" x="20" y="100" width="180" height="6" rx="3"/>
+  <rect x="20" y="112" width="80" height="14" rx="7" fill="hsl(var(--primary))"/>
+  <rect class="r" x="108" y="112" width="90" height="14" rx="7"/>
+  <text class="lbl" x="470" y="120">video fills hero</text>
+
+  <!-- scrolled state -->
+  <text class="lbl" x="0" y="176">after ~80px scroll — sticky, solid parchment bar</text>
+  <rect x="0" y="186" width="640" height="34" rx="8" fill="hsl(var(--card))" stroke="hsl(var(--border))"/>
+  <text class="box" x="12" y="208">AMODA</text>
+  <text class="lbl" x="150" y="207">About</text>
+  <text class="lbl" x="205" y="207">Live Classes</text>
+  <text class="lbl" x="290" y="207">Practitioners</text>
+  <text class="lbl" x="375" y="207">Membership</text>
+  <circle class="r" cx="470" cy="203" r="8"/>
+  <circle class="r" cx="500" cy="203" r="8"/>
+  <rect class="r" x="522" y="193" width="94" height="20" rx="10"/>
+  <text class="lbl" x="540" y="207">Join Amoda</text>
+
+  <!-- search open -->
+  <text class="lbl" x="0" y="252">search open</text>
+  <rect x="0" y="260" width="640" height="34" rx="8" fill="hsl(var(--card))" stroke="hsl(var(--border))"/>
+  <rect x="150" y="268" width="360" height="18" rx="9" fill="hsl(var(--muted))"/>
+  <text class="lbl" x="162" y="281" opacity="0.5">Classes, coaches &amp; more...</text>
+  <circle cx="540" cy="277" r="9" fill="hsl(var(--accent))"/>
+</svg>
