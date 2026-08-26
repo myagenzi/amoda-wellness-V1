@@ -102,4 +102,7 @@ export const shoppeCategories = [
     name: "Tools We Trust",
     body: "Everyday products our practitioners actually recommend.",
   },
-];
+] as const;
+
+export const boxCategory = shoppeCategories[0];
+export const toolCategory = shoppeCategories[1];

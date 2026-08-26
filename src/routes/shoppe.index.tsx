@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { QuietLink } from "@/components/site/QuietButton";
-import { products, shoppeCategories, shoppeIntro, shoppeSeo } from "@/content/shoppe";
+import { boxCategory, products, shoppeIntro, shoppeSeo, toolCategory } from "@/content/shoppe";
 import shoppeImage from "@/assets/shoppe-still-life.jpg";
 
 export const Route = createFileRoute("/shoppe/")({
@@ -47,8 +47,8 @@ function ShoppeIndex() {
       <Section tone="card">
         <Reveal className="max-w-[44ch]">
           <Eyebrow>The Shoppe</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">{shoppeCategories[0].name}</h2>
-          <p className="mt-4 text-ink/80">{shoppeCategories[0].body}</p>
+          <h2 className="type-h1 mt-5 text-ink">{boxCategory.name}</h2>
+          <p className="mt-4 text-ink/80">{boxCategory.body}</p>
         </Reveal>
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {boxes.map((product, index) => (
@@ -75,8 +75,8 @@ function ShoppeIndex() {
       <Section tone="sage">
         <Reveal className="max-w-[44ch]">
           <Eyebrow>The Shoppe</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">{shoppeCategories[1].name}</h2>
-          <p className="mt-4 text-ink/80">{shoppeCategories[1].body}</p>
+          <h2 className="type-h1 mt-5 text-ink">{toolCategory.name}</h2>
+          <p className="mt-4 text-ink/80">{toolCategory.body}</p>
         </Reveal>
         <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tools.map((product, index) => (

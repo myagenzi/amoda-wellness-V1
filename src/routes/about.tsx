@@ -133,9 +133,9 @@ function AboutPage() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <LotusMark variant="ring" ground="dark" className="mx-auto w-14" />
-            <Eyebrow tone="sage" className="mt-8">
-              Our Manifesto
-            </Eyebrow>
+            <div className="mt-8">
+              <Eyebrow tone="sage">Our Manifesto</Eyebrow>
+            </div>
             <div className="mt-8 space-y-6">
               {manifesto.map((line) => (
                 <p key={line} className="type-h2 text-parchment">
