@@ -43,39 +43,36 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* 1 — Hero */}
-      <section className="grain relative overflow-hidden px-5 pt-16 pb-20 sm:px-8 md:pt-24 md:pb-28">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
-          <Reveal>
-            <Eyebrow withDot>{site.tagline}</Eyebrow>
-            <h1 className="type-hero mt-6 max-w-[24ch] text-ink">
+      {/* 1 — Hero: video stage, parchment type on an ink scrim */}
+      <section className="relative -mt-[77px] flex min-h-[86svh] items-center overflow-hidden px-5 pt-[77px] pb-24 sm:px-8 md:min-h-[92svh]">
+        <HeroVideo />
+        <div className="mx-auto w-full max-w-6xl">
+          <Reveal className="max-w-[46rem]">
+            <Eyebrow withDot tone="sage">
+              {site.tagline}
+            </Eyebrow>
+            <h1 className="type-hero mt-6 max-w-[24ch] text-parchment">
               Wellness isn't a destination. It's{" "}
-              <span className="type-accent">coming home to yourself.</span>
+              <span className="type-accent text-sage">coming home to yourself.</span>
             </h1>
-            <Prose className="mt-6">
-              <p>{hero.subheadline}</p>
-            </Prose>
+            <p className="mt-6 max-w-[46ch] text-lg text-parchment/85">{hero.subheadline}</p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <QuietLink to="/classes" size="lg">
+              <QuietLink to="/classes" size="lg" variant="onInk">
                 {hero.primaryCta}
               </QuietLink>
-              <QuietLink to="/classes" hash="free-live-class" variant="quiet">
+              <QuietLink
+                to="/classes"
+                hash="free-live-class"
+                variant="quiet"
+                className="text-sage decoration-sage/45 hover:decoration-sage"
+              >
                 {hero.secondaryCta}
               </QuietLink>
             </div>
-          </Reveal>
-
-          <Reveal delay={160} className="relative">
-            <img
-              src={heroImage}
-              alt="Women in warm natural light, laughing in unhurried conversation"
-              width={1200}
-              height={1400}
-              className="emboss aspect-[4/5] w-full rounded-lg object-cover"
-            />
             <LotusMark
               variant="micro"
-              className="absolute -bottom-5 -left-4 w-16 opacity-90 sm:w-20"
+              ground="dark"
+              className="mt-12 w-14 opacity-85"
               unfold
             />
           </Reveal>
