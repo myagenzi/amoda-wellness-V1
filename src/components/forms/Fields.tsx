@@ -8,9 +8,9 @@ export function Field({
   hint,
 }: {
   label: string;
-  error?: string;
+  error?: string | undefined;
   children: ReactNode;
-  hint?: string;
+  hint?: string | undefined;
 }) {
   return (
     <label className="block">
