@@ -1,0 +1,64 @@
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" style="font-family: var(--font-sans)">
+  <style>
+    .ink { fill: hsl(var(--foreground)); }
+    .mut { fill: hsl(var(--muted-foreground)); }
+    .lbl { font-size: 14px; font-weight: 480; }
+    .sm  { font-size: 12px; }
+    .bx  { fill: none; stroke: hsl(var(--muted-foreground)); stroke-width: 1; }
+    .rail { stroke: hsl(var(--border)); stroke-width: 1; }
+    .zone { fill: none; stroke: hsl(var(--border)); stroke-width: 1; stroke-dasharray: 4 3; }
+    .q   { fill: hsl(var(--muted)); }
+    .wire { stroke: hsl(var(--muted-foreground)); stroke-width: 1; fill: none; }
+  </style>
+  <defs>
+    <marker id="c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="hsl(var(--muted-foreground))" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="624" height="384" class="zone" rx="8"/>
+  <text x="20" y="28" class="mut sm">fixed background photograph</text>
+
+  <!-- sticky left -->
+  <rect x="28" y="44" width="220" height="300" class="bx" rx="8"/>
+  <text x="44" y="70" class="mut sm">THE ECOSYSTEM</text>
+  <rect x="44" y="80" width="150" height="9" class="q" rx="4"/>
+  <rect x="44" y="94" width="120" height="9" class="q" rx="4"/>
+  <text x="44" y="126" class="ink lbl">One home for your</text>
+  <text x="44" y="144" class="ink lbl">whole wellbeing.</text>
+
+  <!-- 2-col nav pills -->
+  <rect x="44" y="164" width="88" height="24" rx="12" fill="hsl(var(--accent))"/>
+  <text x="54" y="180" class="sm" fill="hsl(var(--accent-foreground))">Practitioners</text>
+  <rect x="140" y="164" width="88" height="24" rx="12" class="bx"/>
+  <rect x="44" y="196" width="88" height="24" rx="12" class="bx"/>
+  <rect x="140" y="196" width="88" height="24" rx="12" class="bx"/>
+  <rect x="44" y="228" width="88" height="24" rx="12" class="bx"/>
+  <rect x="140" y="228" width="88" height="24" rx="12" class="bx"/>
+  <text x="44" y="252" class="mut sm">six compact pills, 2 columns</text>
+
+  <rect x="44" y="296" width="168" height="30" rx="8" fill="hsl(var(--primary))"/>
+  <text x="56" y="315" class="sm" fill="hsl(var(--primary-foreground))">Explore Live Classes &amp; Coaching</text>
+  <text x="28" y="360" class="mut sm">sticky — stays while right side scrolls</text>
+
+  <!-- right cards -->
+  <rect x="300" y="30" width="300" height="86" class="bx" rx="8"/>
+  <rect x="312" y="42" width="120" height="62" class="q" rx="6"/>
+  <text x="444" y="60" class="ink lbl">Trusted Practitioners</text>
+  <rect x="444" y="72" width="130" height="8" class="q" rx="4"/>
+  <rect x="444" y="86" width="100" height="8" class="q" rx="4"/>
+
+  <rect x="300" y="128" width="300" height="86" class="bx" rx="8"/>
+  <rect x="312" y="140" width="120" height="62" class="q" rx="6"/>
+  <text x="444" y="158" class="ink lbl">Live Classes</text>
+
+  <rect x="300" y="226" width="300" height="86" class="bx" rx="8"/>
+  <rect x="312" y="238" width="120" height="62" class="q" rx="6"/>
+  <text x="444" y="256" class="ink lbl">A Real Community</text>
+
+  <rect x="300" y="324" width="300" height="40" class="zone" rx="8"/>
+  <text x="316" y="349" class="mut sm">Shoppe · Retreats · Corporate</text>
+
+  <path d="M300 74 L252 176" class="wire" marker-end="url(#c)" stroke-dasharray="4 3"/>
+  <text x="252" y="120" class="mut sm" style="paint-order: stroke" stroke="hsl(var(--background))" stroke-width="3">in view → pill active</text>
+</svg>
