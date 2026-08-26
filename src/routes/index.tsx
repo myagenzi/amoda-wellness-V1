@@ -108,30 +108,7 @@ function Home() {
       </Section>
 
       {/* 3 — What Amoda is */}
-      <Section>
-        <Reveal className="max-w-[52ch]">
-          <Eyebrow>What Amoda is</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">{whatAmodaIs.headline}</h2>
-          <p className="mt-5 text-ink/80">{whatAmodaIs.intro}</p>
-        </Reveal>
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ecosystem.map((item, index) => (
-            <Reveal as="li" key={item.name} delay={index * 90}>
-              <Link
-                to={item.to}
-                className="emboss emboss-lift flex h-full flex-col p-7 no-underline"
-              >
-                <EcosystemIcon name={item.icon} />
-                <h3 className="type-h3 mt-5 text-ink">{item.name}</h3>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink/75">{item.what}</p>
-              </Link>
-            </Reveal>
-          ))}
-        </ul>
-        <Reveal delay={120} className="mt-12">
-          <QuietLink to={whatAmodaIs.cta.to}>{whatAmodaIs.cta.label}</QuietLink>
-        </Reveal>
-      </Section>
+      <EcosystemScroller />
 
       {/* 4 — Who we serve */}
       <Section tone="sage">
