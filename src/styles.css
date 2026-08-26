@@ -66,6 +66,7 @@
 
 :root {
   --radius: 0.5rem;
+  --header-h: 83px;
 
   --parchment: oklch(0.9465 0.0181 89.36);
   --leaf: oklch(0.4069 0.0911 134.76);
@@ -129,6 +130,12 @@
   ::selection {
     background-color: var(--color-sage);
     color: var(--color-ink);
+  }
+
+  input[type="search"].search-plain::-webkit-search-cancel-button,
+  input[type="search"].search-plain::-webkit-search-decoration {
+    appearance: none;
+    display: none;
   }
 
   :focus-visible {

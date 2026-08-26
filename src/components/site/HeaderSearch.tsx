@@ -83,10 +83,10 @@ export function HeaderSearch({ onInk }: { onInk: boolean }) {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Classes, coaches &amp; more..."
+          placeholder="Classes, coaches & more..."
           aria-label="Search Amoda"
           className={cn(
-            "w-full rounded-full border bg-transparent px-4 py-1.5 text-sm outline-none transition-colors duration-500",
+            "search-plain w-full rounded-full border bg-transparent px-4 py-1.5 text-sm outline-none transition-colors duration-500",
             onInk
               ? "border-parchment/35 text-parchment placeholder:text-parchment/45"
               : "border-[var(--hairline)] text-ink placeholder:text-ink/40",

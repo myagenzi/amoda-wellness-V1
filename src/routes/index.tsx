@@ -45,7 +45,7 @@ function Home() {
   return (
     <>
       {/* 1 — Hero: video stage, parchment type on an ink scrim */}
-      <section className="relative -mt-[77px] flex min-h-[86svh] items-center overflow-hidden px-5 pt-[77px] pb-24 sm:px-8 md:min-h-[92svh]">
+      <section className="relative -mt-[var(--header-h)] flex min-h-[86svh] items-center overflow-hidden px-5 pt-[var(--header-h)] pb-24 sm:px-8 md:min-h-[92svh]">
         <HeroVideo />
         <div className="mx-auto w-full max-w-6xl">
           <Reveal className="max-w-[46rem]">

@@ -43,7 +43,7 @@ export function Header() {
           : "border-[var(--hairline)] bg-background/92 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
+      <div className="mx-auto flex w-full max-w-6xl min-h-[var(--header-h)] items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" aria-label="Amoda Wellness — home" onClick={() => setOpen(false)}>
           <Lockup
             size="sm"
@@ -90,7 +90,7 @@ export function Header() {
               to="/membership"
               size="sm"
               variant={onInk ? "onInk" : "leaf"}
-              className="ml-2"
+              className="ml-2 whitespace-nowrap"
             >
               Join Amoda
             </QuietLink>
