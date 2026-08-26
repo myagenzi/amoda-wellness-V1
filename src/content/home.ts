@@ -1,77 +1,127 @@
+/**
+ * Homepage copy — verbatim from Amoda Wellness Website Structure & Content (v2).
+ */
+
+export const seo = {
+  title: "Amoda Wellness | Global Wellness, Community & Transformation",
+  description:
+    "Amoda connects you with trusted wellness practitioners through live online classes and 1:1 coaching — health coaching, life coaching, nutrition, yoga, and more. Join us.",
+} as const;
+
+export const hero = {
+  headline: "Wellness isn't a destination. It's coming home to yourself.",
+  subheadline: "Amoda connects you to YOURSELF through trusted practitioners.",
+  primaryCta: "Book a Live Class or Coaching Session",
+  secondaryCta: "Join This Week's Free Live Class",
+} as const;
+
+/** Section 2 — The Problem */
+export const problem = {
+  headline: "You've spent years taking care of everyone else.",
+  paragraphs: [
+    "Burnout. Sleepless nights. A body that feels unfamiliar. A sense that somewhere between the career, the kids, the caregiving, and the endless to-do list — you got lost in the list too.",
+    "You don't need another app telling you to drink more water. You need real guidance from people who understand what you're going through, and a community that reminds you that you're not doing this alone.",
+  ],
+  close: "That's Amoda.",
+} as const;
+
+/** Section 3 — What Amoda Is */
+export const whatAmodaIs = {
+  headline: "One home for your whole wellbeing.",
+  intro: "Amoda brings together everything wellness should be — in one place, live now:",
+  cta: { label: "Explore Live Classes & Coaching", to: "/classes" },
+} as const;
+
 export const ecosystem = [
   {
     name: "Trusted Practitioners",
-    what: "A curated — not crowded — network of certified coaches, nutritionists and teachers, vetted for credentials and ethics.",
+    what: "Vetted health coaches, life coaches, nutritionists, yoga teachers, and diabetic-wellness specialists — live online.",
     to: "/practitioners",
     icon: "trust" as const,
   },
   {
-    name: "Live Classes",
-    what: "Live online classes and 1:1 coaching across five categories, held in small formats so you are actually seen.",
+    name: "Live Classes & Coaching",
+    what: "Health Coaching, Life Coaching, Nutrition, Yoga Classes, and Diabetic Solutions — real-time sessions and 1:1 consulting.",
     to: "/classes",
     icon: "class" as const,
   },
   {
-    name: "Community",
-    what: "A real community with accountability groups — the part that keeps a practice going after week three.",
+    name: "A Real Community",
+    what: "Belonging, accountability, and shared growth — not another silent app.",
     to: "/membership",
     icon: "community" as const,
   },
   {
-    name: "Shoppe",
-    what: "Curated tools, seasonal boxes and products our practitioners use themselves. Live now.",
+    name: "The Shoppe",
+    what: "Seasonal wellness boxes and the everyday tools we trust — live now.",
     to: "/shoppe",
     icon: "shoppe" as const,
   },
   {
-    name: "Retreats",
-    what: "Local retreats, wellness journeys in India, and virtual international experiences.",
+    name: "Retreats & Experiences",
+    what: "Local gatherings and global wellness journeys (waitlist).",
     to: "/membership",
     icon: "retreat" as const,
   },
   {
     name: "Corporate Wellness",
-    what: "Practitioner-led programmes brought into organisations for the people doing the work.",
+    what: "Bring Amoda's coaching and classes to your team.",
     to: "/membership",
     icon: "corporate" as const,
   },
 ];
 
+/** Section 4 — Who We Serve */
+export const whoWeServe = {
+  headline: "Wherever you are in your journey, there's a place for you here.",
+} as const;
+
 export const audiences = [
   {
-    label: "Women 40+ in transition",
-    headline: "You want to feel like yourself again — not optimised.",
-    body: "Perimenopause, an empty nest, a body that changed without asking. You do not need fixing. You need someone credentialed who has walked hundreds of women through this and will be specific with you.",
-    cta: { label: "Start with Health Coaching", to: "/classes/health-coaching" },
+    label: "Women 40+",
+    body: "Navigating burnout, transition, or renewal?",
+    quote: "You're not broken. You're transforming.",
+    cta: { label: "See Health & Life Coaching", to: "/classes" },
   },
   {
-    label: "Entrepreneurs & professionals",
-    headline: "Output has been the only measure for a long time now.",
-    body: "You already know what is unsustainable. What you have not had is a practitioner who works at calendar level and is honest about the tradeoffs instead of prescribing a morning routine.",
-    cta: { label: "Start with Life Coaching", to: "/classes/life-coaching" },
+    label: "Entrepreneurs & Professionals",
+    body: "Building something big, at the cost of yourself?",
+    quote: "Sustainable success starts with a sustainable you.",
+    cta: { label: "Explore Life Coaching", to: "/classes/life-coaching" },
   },
   {
-    label: "Global wellness seekers",
-    headline: "Trusted guidance, wherever you happen to be.",
-    body: "Practitioners across Canada, India and the UK, in several languages, holding practices with real lineage — held to a modern standard of clarity and results.",
-    cta: { label: "Meet the practitioners", to: "/practitioners" },
+    label: "Global Wellness Seekers",
+    body: "Looking for trusted guidance, wherever you are?",
+    quote: "From Ottawa to India to wherever you call home.",
+    cta: { label: "Browse Practitioners", to: "/practitioners" },
   },
 ];
 
-export const differentiators = [
-  {
-    title: "Curated, not crowded",
-    body: "Most platforms sell access to everything. We sell access to the vetted few — every practitioner is assessed on credentials, references and ethics before they appear here.",
-  },
-  {
-    title: "Live, not library",
-    body: "Nothing here is a pre-recorded course you will not finish. Every session is live, held by a person who remembers your last one.",
-  },
-  {
-    title: "Global, and specific",
-    body: "Practitioners across three countries and several languages — with practices that carry real history, judged by what actually works.",
-  },
+/** Section 6 — Trust / Differentiation */
+export const trust = {
+  headline: "Why Amoda, not just another wellness app?",
+  body: "Most platforms give you a class, a product, or a service. Amoda gives you an ecosystem — practitioners you can trust, a community that shows up, and a path that adapts as your life does.",
+  close: "Community + Trust + Global Access — that's the difference.",
+  strip: [
+    "Certification Verified",
+    "Experience Checked",
+    "References Reviewed",
+    "Ethical Standards Upheld",
+  ],
+} as const;
+
+/** Section 7 — The Manifesto Moment */
+export const manifesto = [
+  "We believe wellness is not a destination. It is a lifelong journey of coming home to yourself.",
+  "We believe every person deserves trusted guidance, meaningful connection, and practices that nourish the whole being.",
+  "We believe community creates healing. We believe joy is essential to wellbeing.",
+  "This is Amoda.",
 ];
+
+/** Section 8 — Social Proof */
+export const socialProof = {
+  headline: "Real people. Real transformation.",
+} as const;
 
 export const testimonials = [
   {
@@ -94,8 +144,12 @@ export const testimonials = [
   },
 ];
 
-export const manifesto = [
-  "We believe wellness is not a destination. It is a lifelong journey of coming home to yourself.",
-  "We believe every person deserves trusted guidance, meaningful connection, and practices that nourish the whole being.",
-  "We believe community creates healing. We believe joy is essential to wellbeing.",
-];
+/** Section 9 — Final CTA */
+export const finalCta = {
+  headline: "Your wellness home is waiting.",
+  body: "Join a growing global community built on trust, connection, and joy.",
+  primary: { label: "Join the Community — Free", to: "/membership" },
+  secondary: { label: "Book a Live Class or Coaching Session", to: "/classes" },
+  smallPrint:
+    "Founding members get early access to new categories, retreats, and Shoppe drops.",
+} as const;

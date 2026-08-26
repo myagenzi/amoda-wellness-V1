@@ -78,3 +78,28 @@ export const products: Product[] = [
 ];
 
 export const productBySlug = (slug: string) => products.find((p) => p.slug === slug);
+
+/** Shoppe page copy — verbatim from the approved content document (v2). */
+export const shoppeSeo = {
+  title: "The Amoda Shoppe — Curated Wellness Products",
+  description: "Seasonal wellness boxes and everyday tools we trust, hand-selected by Amoda.",
+} as const;
+
+export const shoppeIntro = {
+  headline: "Wellness you can hold in your hands.",
+  body: "We curate seasonal wellness boxes and everyday tools we trust — no fluff, no gimmicks, just what actually supports whole-person wellbeing.",
+  cta: "Enquire about this",
+} as const;
+
+export const shoppeCategories = [
+  {
+    kind: "box" as const,
+    name: "Seasonal Wellness Boxes",
+    body: "Curated, rotating boxes built around the season and what your body needs right now.",
+  },
+  {
+    kind: "tool" as const,
+    name: "Tools We Trust",
+    body: "Everyday products our practitioners actually recommend.",
+  },
+];
