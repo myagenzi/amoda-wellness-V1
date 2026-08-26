@@ -18,7 +18,7 @@ import {
   socialProof,
   testimonials,
   trust,
-  whatAmodaIs,
+  
   whoWeServe,
 } from "@/content/home";
 import { freeClass, site } from "@/content/site";
