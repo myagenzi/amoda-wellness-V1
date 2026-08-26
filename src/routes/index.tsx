@@ -189,7 +189,7 @@ function Home() {
             <LotusMark variant="ring" className="mx-auto w-14" />
             <div className="mt-8 space-y-6">
               {manifesto.map((line) => (
-                <p key={line} className="type-h2 text-ink">
+                <p key={line} className="type-h2 whitespace-pre-line text-ink">
                   {line}
                 </p>
               ))}
@@ -203,7 +203,7 @@ function Home() {
       <Section>
         <Reveal className="max-w-[42ch]">
           <Eyebrow>Social proof</Eyebrow>
-          <h2 className="type-h1 mt-5 text-ink">{socialProof.headline}</h2>
+          <h2 className="type-h1 mt-5 whitespace-pre-line text-ink">{socialProof.headline}</h2>
         </Reveal>
         <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
