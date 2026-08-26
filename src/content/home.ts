@@ -123,15 +123,15 @@ export const trust = {
 
 /** Section 7 — The Manifesto Moment */
 export const manifesto = [
-  "We believe wellness is not a destination. It is a lifelong journey of coming home to yourself.",
+  "We believe wellness is not a destination.\nIt is a lifelong journey of coming home to yourself.",
   "We believe every person deserves trusted guidance, meaningful connection, and practices that nourish the whole being.",
-  "We believe community creates healing. We believe joy is essential to wellbeing.",
+  "We believe community creates healing.\nWe believe joy is essential to wellbeing.",
   "This is Amoda.",
 ];
 
 /** Section 8 — Social Proof */
 export const socialProof = {
-  headline: "Real people. Real transformation.",
+  headline: "Real people.\nReal transformation.",
 } as const;
 
 export const testimonials = [
