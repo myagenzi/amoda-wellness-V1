@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 export type LotusVariant = "ring" | "micro";
 export type LotusGround = "light" | "dark";
 
-const DIAGONALS = [45, 135, 225, 315];
+const DIAGONALS = [45, 135];
 
 export function LotusMark({
   variant = "ring",
@@ -79,7 +79,7 @@ export function LotusMark({
           cx="100"
           cy="100"
           r="9.4"
-          fill="var(--color-parchment)"
+          fill={ground === "dark" ? "var(--color-ink)" : "var(--color-parchment)"}
           stroke="var(--color-gold)"
           strokeWidth="4.8"
         />
