@@ -75,7 +75,7 @@ export function HeaderSearch({ onInk }: { onInk: boolean }) {
       <div
         className={cn(
           "overflow-hidden transition-all duration-500 ease-[var(--ease-settle)]",
-          open ? "w-48 opacity-100 xl:w-64" : "w-0 opacity-0",
+          open ? "w-40 opacity-100 xl:w-56" : "w-0 opacity-0",
         )}
       >
         <input
@@ -85,6 +85,7 @@ export function HeaderSearch({ onInk }: { onInk: boolean }) {
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Classes, coaches & more..."
           aria-label="Search Amoda"
+          autoComplete="off"
           className={cn(
             "search-plain w-full rounded-full border bg-transparent px-4 py-1.5 text-sm outline-none transition-colors duration-500",
             onInk
