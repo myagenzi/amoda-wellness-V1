@@ -104,7 +104,7 @@ export function EcosystemScroller() {
   return (
     <section
       id="what-amoda-is"
-      className="relative overflow-hidden px-5 py-20 md:px-10 md:py-40 lg:px-16 lg:py-48"
+      className="relative px-5 py-20 md:px-10 md:py-28 lg:px-16 lg:py-32"
     >
       <div
         aria-hidden="true"
