@@ -27,47 +27,58 @@ export const problem = {
 
 /** Section 3 — What Amoda Is */
 export const whatAmodaIs = {
+  eyebrow: "The ecosystem",
   headline: "One home for your whole wellbeing.",
+  subheadline: "Amoda brings together everything wellness should be — in one place, live now.",
   intro: "Amoda brings together everything wellness should be — in one place, live now:",
   cta: { label: "Explore Live Classes & Coaching", to: "/classes" },
 } as const;
 
-export const ecosystem = [
+type EcosystemItem = {
+  name: string;
+  what: string;
+  to: string;
+  icon: "trust" | "class" | "community" | "shoppe" | "retreat" | "corporate";
+  note?: string;
+};
+
+export const ecosystem: EcosystemItem[] = [
   {
     name: "Trusted Practitioners",
     what: "Vetted health coaches, life coaches, nutritionists, yoga teachers, and diabetic-wellness specialists — live online.",
     to: "/practitioners",
-    icon: "trust" as const,
+    icon: "trust",
   },
   {
     name: "Live Classes & Coaching",
     what: "Health Coaching, Life Coaching, Nutrition, Yoga Classes, and Diabetic Solutions — real-time sessions and 1:1 consulting.",
     to: "/classes",
-    icon: "class" as const,
+    icon: "class",
   },
   {
     name: "A Real Community",
     what: "Belonging, accountability, and shared growth — not another silent app.",
     to: "/membership",
-    icon: "community" as const,
+    icon: "community",
   },
   {
     name: "The Shoppe",
     what: "Seasonal wellness boxes and the everyday tools we trust — live now.",
     to: "/shoppe",
-    icon: "shoppe" as const,
+    icon: "shoppe",
   },
   {
     name: "Retreats & Experiences",
-    what: "Local gatherings and global wellness journeys (waitlist).",
+    what: "Local gatherings and global wellness journeys.",
     to: "/membership",
-    icon: "retreat" as const,
+    icon: "retreat",
+    note: "Waitlist",
   },
   {
     name: "Corporate Wellness",
     what: "Bring Amoda's coaching and classes to your team.",
     to: "/membership",
-    icon: "corporate" as const,
+    icon: "corporate",
   },
 ];
 
