@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ClassesIndexRouteImport } from './routes/classes.index'
+import { Route as ClassesSlugRouteImport } from './routes/classes.$slug'
+import { Route as PractitionersIndexRouteImport } from './routes/practitioners.index'
+import { Route as PractitionersSlugRouteImport } from './routes/practitioners.$slug'
+import { Route as PractitionersApplyRouteImport } from './routes/practitioners.apply'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ClassesIndexRoute = ClassesIndexRouteImport.update({
+  id: '/classes/',
+  path: '/classes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClassesSlugRoute = ClassesSlugRouteImport.update({
+  id: '/classes/$slug',
+  path: '/classes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PractitionersIndexRoute = PractitionersIndexRouteImport.update({
+  id: '/practitioners/',
+  path: '/practitioners/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PractitionersSlugRoute = PractitionersSlugRouteImport.update({
+  id: '/practitioners/$slug',
+  path: '/practitioners/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PractitionersApplyRoute = PractitionersApplyRouteImport.update({
+  id: '/practitioners/apply',
+  path: '/practitioners/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/classes/$slug': typeof ClassesSlugRoute
+  '/practitioners/$slug': typeof PractitionersSlugRoute
+  '/practitioners/apply': typeof PractitionersApplyRoute
+  '/classes/': typeof ClassesIndexRoute
+  '/practitioners/': typeof PractitionersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/classes/$slug': typeof ClassesSlugRoute
+  '/practitioners/$slug': typeof PractitionersSlugRoute
+  '/practitioners/apply': typeof PractitionersApplyRoute
+  '/classes': typeof ClassesIndexRoute
+  '/practitioners': typeof PractitionersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/classes/$slug': typeof ClassesSlugRoute
+  '/practitioners/$slug': typeof PractitionersSlugRoute
+  '/practitioners/apply': typeof PractitionersApplyRoute
+  '/classes/': typeof ClassesIndexRoute
+  '/practitioners/': typeof PractitionersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/classes/$slug'
+    | '/practitioners/$slug'
+    | '/practitioners/apply'
+    | '/classes/'
+    | '/practitioners/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/classes/$slug'
+    | '/practitioners/$slug'
+    | '/practitioners/apply'
+    | '/classes'
+    | '/practitioners'
+  id:
+    | '__root__'
+    | '/'
+    | '/classes/$slug'
+    | '/practitioners/$slug'
+    | '/practitioners/apply'
+    | '/classes/'
+    | '/practitioners/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ClassesSlugRoute: typeof ClassesSlugRoute
+  PractitionersSlugRoute: typeof PractitionersSlugRoute
+  PractitionersApplyRoute: typeof PractitionersApplyRoute
+  ClassesIndexRoute: typeof ClassesIndexRoute
+  PractitionersIndexRoute: typeof PractitionersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/classes/': {
+      id: '/classes/'
+      path: '/classes'
+      fullPath: '/classes/'
+      preLoaderRoute: typeof ClassesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/classes/$slug': {
+      id: '/classes/$slug'
+      path: '/classes/$slug'
+      fullPath: '/classes/$slug'
+      preLoaderRoute: typeof ClassesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practitioners/': {
+      id: '/practitioners/'
+      path: '/practitioners'
+      fullPath: '/practitioners/'
+      preLoaderRoute: typeof PractitionersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practitioners/$slug': {
+      id: '/practitioners/$slug'
+      path: '/practitioners/$slug'
+      fullPath: '/practitioners/$slug'
+      preLoaderRoute: typeof PractitionersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practitioners/apply': {
+      id: '/practitioners/apply'
+      path: '/practitioners/apply'
+      fullPath: '/practitioners/apply'
+      preLoaderRoute: typeof PractitionersApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ClassesSlugRoute: ClassesSlugRoute,
+  PractitionersSlugRoute: PractitionersSlugRoute,
+  PractitionersApplyRoute: PractitionersApplyRoute,
+  ClassesIndexRoute: ClassesIndexRoute,
+  PractitionersIndexRoute: PractitionersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
