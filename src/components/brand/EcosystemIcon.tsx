@@ -86,6 +86,14 @@ export function EcosystemIcon({
           <path d="M6 40h36" {...common} />
         </>
       ) : null}
+
+      {name === "practitioner" ? (
+        <>
+          <path d="M24 8c4.4 4 6.6 7.6 6.6 11.4 0 3.8-2.2 7.4-6.6 11.4-4.4-4-6.6-7.6-6.6-11.4C17.4 15.6 19.6 12 24 8Z" {...common} />
+          <path d="M24 31c-5 1.6-8 5-9 10h18c-1-5-4-8.4-9-10Z" {...common} />
+          <circle cx="24" cy="19" r="2.6" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" />
+        </>
+      ) : null}
     </svg>
   );
 }
