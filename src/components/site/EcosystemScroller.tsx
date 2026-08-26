@@ -111,7 +111,14 @@ export function EcosystemScroller() {
         className="absolute inset-0 -z-10 bg-cover bg-fixed bg-center"
         style={{ backgroundImage: `url("${backgroundUrl}")` }}
       />
-      <div aria-hidden="true" className="bg-scrim absolute inset-0 -z-10" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 72%, transparent) 0%, color-mix(in oklab, var(--ink) 52%, transparent) 42%, color-mix(in oklab, var(--ink) 66%, transparent) 100%)",
+        }}
+      />
 
       <div className="mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[400px_1fr] lg:gap-24 xl:grid-cols-[460px_1fr] xl:gap-48">
         {/* Sticky left column */}
