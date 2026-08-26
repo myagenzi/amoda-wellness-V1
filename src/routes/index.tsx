@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
+import { HeroVideo } from "@/components/site/HeroVideo";
 import { QuietLink } from "@/components/site/QuietButton";
 import { LotusMark, PetalDivider, LotusWatermark } from "@/components/brand/LotusMark";
 import { EcosystemIcon } from "@/components/brand/EcosystemIcon";
