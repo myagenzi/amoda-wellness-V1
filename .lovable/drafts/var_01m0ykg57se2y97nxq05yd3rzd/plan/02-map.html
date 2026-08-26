@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420">
+  <style>
+    text { font-family: var(--font-sans); fill: hsl(var(--muted-foreground)); font-size: 12px; }
+    .lbl { fill: hsl(var(--foreground)); font-size: 14px; font-weight: 480; }
+    .box { fill: none; stroke: hsl(var(--muted-foreground)); stroke-width: 1; }
+    .zone { fill: none; stroke: hsl(var(--border)); stroke-width: 1; stroke-dasharray: 4 3; }
+    .rail { stroke: hsl(var(--border)); stroke-width: 1; }
+    .acc { fill: hsl(var(--accent)); }
+    .accink { fill: hsl(var(--accent-foreground)); font-size: 11px; }
+    .mono { font-family: var(--font-mono); font-size: 11px; }
+  </style>
+
+  <rect class="zone" x="8" y="8" width="624" height="120" rx="8"/>
+  <text x="20" y="26" class="mono">source of truth</text>
+  <rect class="box" x="28" y="40" width="200" height="70" rx="8"/>
+  <text x="44" y="68" class="lbl">Approved content doc</text>
+  <text x="44" y="88">v2 — every headline, body, CTA</text>
+
+  <path d="M232 75 H 300" class="rail"/>
+  <path d="M300 75 l -7 -4 v 8 z" fill="hsl(var(--muted-foreground))"/>
+
+  <rect class="box" x="304" y="40" width="200" height="70" rx="8"/>
+  <text x="320" y="68" class="lbl">Content modules</text>
+  <text x="320" y="88" class="mono">src/content/*</text>
+
+  <rect class="zone" x="8" y="150" width="624" height="256" rx="8"/>
+  <text x="20" y="170" class="mono">pages restored to exact copy</text>
+
+  <rect class="box" x="28" y="186" width="176" height="52" rx="8"/>
+  <text x="44" y="208" class="lbl">Home</text>
+  <text x="44" y="226">9 sections, verbatim</text>
+
+  <rect class="box" x="220" y="186" width="176" height="52" rx="8"/>
+  <text x="236" y="208" class="lbl">About</text>
+  <text x="236" y="226">Story + How it fits</text>
+
+  <rect class="box" x="412" y="186" width="200" height="52" rx="8"/>
+  <text x="428" y="208" class="lbl">Live Classes &amp; Coaching</text>
+  <text x="428" y="226">overview + 5 categories</text>
+
+  <rect class="box" x="28" y="252" width="176" height="52" rx="8"/>
+  <text x="44" y="274" class="lbl">Practitioners</text>
+  <text x="44" y="292">roster · profile · apply</text>
+
+  <rect class="box" x="220" y="252" width="176" height="52" rx="8"/>
+  <text x="236" y="274" class="lbl">Shoppe</text>
+  <text x="236" y="292">2 doc category cards</text>
+
+  <rect class="box" x="412" y="252" width="200" height="52" rx="8"/>
+  <text x="428" y="274" class="lbl">Membership</text>
+  <text x="428" y="292">tiers · corporate · retreats</text>
+
+  <rect class="box" x="28" y="318" width="176" height="52" rx="8"/>
+  <text x="44" y="340" class="lbl">Contact</text>
+  <text x="44" y="358">doc form + dropdown</text>
+
+  <rect class="box" x="220" y="318" width="176" height="52" rx="8"/>
+  <text x="236" y="340" class="lbl">Footer</text>
+  <text x="236" y="358">4 columns as listed</text>
+
+  <rect class="box" x="412" y="318" width="200" height="52" rx="8"/>
+  <text x="428" y="340" class="lbl">Design &amp; forms</text>
+  <text x="428" y="358">unchanged</text>
+
+  <circle class="acc" cx="440" cy="128" r="9"/>
+  <text x="436" y="132" class="accink">1</text>
+  <text x="456" y="132">only wording changes — no layout or component rework</text>
+</svg>
