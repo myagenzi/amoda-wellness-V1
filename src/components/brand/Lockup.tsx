@@ -19,7 +19,9 @@ export function Lockup({
   withTagline?: boolean;
   className?: string;
 }) {
-  const markSize = size === "lg" ? "w-16" : size === "md" ? "w-11" : "w-9";
+  // Brand rule: the outer ring is dropped below 48px, leaving petals + gold centre.
+  const markSize = size === "lg" ? "w-16" : size === "md" ? "w-12" : "w-9";
+  const markVariant = size === "sm" ? "micro" : "ring";
   const wordSize =
     size === "lg" ? "text-3xl" : size === "md" ? "text-xl" : "text-lg";
   const text = ground === "dark" ? "text-parchment" : "text-ink";
@@ -27,7 +29,8 @@ export function Lockup({
 
   return (
     <span className={cn("flex min-w-[120px] items-center gap-3", className)}>
-      <LotusMark variant="ring" ground={ground} className={markSize} />
+      <LotusMark variant={markVariant} ground={ground} className={markSize} />
+
       <span className="flex flex-col">
         <span
           className={cn(

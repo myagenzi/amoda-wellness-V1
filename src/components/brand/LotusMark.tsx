@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 export type LotusVariant = "ring" | "micro";
 export type LotusGround = "light" | "dark";
 
-const DIAGONALS = [45, 135, 225, 315];
+const DIAGONALS = [45, 135];
 
 export function LotusMark({
   variant = "ring",
@@ -43,34 +43,34 @@ export function LotusMark({
     >
       {variant === "ring" ? (
         <>
-          <circle cx="100" cy="100" r="75" fill="none" stroke={ring} strokeWidth="3.2" />
+          <circle cx="100" cy="100" r="75" fill="none" stroke={ring} strokeWidth="3" />
           <circle
             cx="100"
             cy="100"
-            r="32"
+            r="34"
             fill="none"
             stroke={ring}
-            strokeWidth="0.7"
-            opacity="0.75"
+            strokeWidth="0.8"
+            opacity="0.8"
           />
         </>
       ) : null}
 
       <g className={unfold ? "unfold" : undefined}>
         {/* Sage petals on the axes */}
-        <ellipse cx="100" cy="100" rx="7.5" ry="59" fill={soft} />
-        <ellipse cx="100" cy="100" rx="59" ry="7.5" fill={soft} />
+        <ellipse cx="100" cy="100" rx="8.4" ry="61.5" fill={soft} />
+        <ellipse cx="100" cy="100" rx="61.5" ry="8.4" fill={soft} />
 
         {/* Leaf petals on the diagonals */}
         {DIAGONALS.map((deg) => (
           <ellipse
             key={deg}
-            cx="0"
-            cy="-29"
-            rx="8.6"
-            ry="29"
+            cx="100"
+            cy="100"
+            rx="9.4"
+            ry="59"
             fill={leaf}
-            transform={`translate(100 100) rotate(${deg})`}
+            transform={`rotate(${deg} 100 100)`}
           />
         ))}
 
@@ -78,12 +78,13 @@ export function LotusMark({
         <circle
           cx="100"
           cy="100"
-          r="12.5"
-          fill="none"
+          r="9.4"
+          fill={ground === "dark" ? "var(--color-ink)" : "var(--color-parchment)"}
           stroke="var(--color-gold)"
-          strokeWidth="7"
+          strokeWidth="4.8"
         />
       </g>
+
     </svg>
   );
 }

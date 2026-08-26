@@ -10,16 +10,54 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AboutHowItWorksRouteImport } from './routes/about.how-it-works'
 import { Route as ClassesIndexRouteImport } from './routes/classes.index'
 import { Route as ClassesSlugRouteImport } from './routes/classes.$slug'
 import { Route as PractitionersIndexRouteImport } from './routes/practitioners.index'
 import { Route as PractitionersSlugRouteImport } from './routes/practitioners.$slug'
 import { Route as PractitionersApplyRouteImport } from './routes/practitioners.apply'
+import { Route as ShoppeIndexRouteImport } from './routes/shoppe.index'
+import { Route as ShoppeSlugRouteImport } from './routes/shoppe.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutHowItWorksRoute = AboutHowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => AboutRoute,
 } as any)
 const ClassesIndexRoute = ClassesIndexRouteImport.update({
   id: '/classes/',
@@ -46,66 +84,131 @@ const PractitionersApplyRoute = PractitionersApplyRouteImport.update({
   path: '/practitioners/apply',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShoppeIndexRoute = ShoppeIndexRouteImport.update({
+  id: '/shoppe/',
+  path: '/shoppe/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShoppeSlugRoute = ShoppeSlugRouteImport.update({
+  id: '/shoppe/$slug',
+  path: '/shoppe/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/membership': typeof MembershipRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
+  '/about/how-it-works': typeof AboutHowItWorksRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/practitioners/$slug': typeof PractitionersSlugRoute
   '/practitioners/apply': typeof PractitionersApplyRoute
+  '/shoppe/$slug': typeof ShoppeSlugRoute
   '/classes/': typeof ClassesIndexRoute
   '/practitioners/': typeof PractitionersIndexRoute
+  '/shoppe/': typeof ShoppeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/membership': typeof MembershipRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
+  '/about/how-it-works': typeof AboutHowItWorksRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/practitioners/$slug': typeof PractitionersSlugRoute
   '/practitioners/apply': typeof PractitionersApplyRoute
+  '/shoppe/$slug': typeof ShoppeSlugRoute
   '/classes': typeof ClassesIndexRoute
   '/practitioners': typeof PractitionersIndexRoute
+  '/shoppe': typeof ShoppeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/membership': typeof MembershipRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
+  '/about/how-it-works': typeof AboutHowItWorksRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/practitioners/$slug': typeof PractitionersSlugRoute
   '/practitioners/apply': typeof PractitionersApplyRoute
+  '/shoppe/$slug': typeof ShoppeSlugRoute
   '/classes/': typeof ClassesIndexRoute
   '/practitioners/': typeof PractitionersIndexRoute
+  '/shoppe/': typeof ShoppeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/contact'
+    | '/membership'
+    | '/privacy'
+    | '/terms'
+    | '/about/how-it-works'
     | '/classes/$slug'
     | '/practitioners/$slug'
     | '/practitioners/apply'
+    | '/shoppe/$slug'
     | '/classes/'
     | '/practitioners/'
+    | '/shoppe/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/contact'
+    | '/membership'
+    | '/privacy'
+    | '/terms'
+    | '/about/how-it-works'
     | '/classes/$slug'
     | '/practitioners/$slug'
     | '/practitioners/apply'
+    | '/shoppe/$slug'
     | '/classes'
     | '/practitioners'
+    | '/shoppe'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/contact'
+    | '/membership'
+    | '/privacy'
+    | '/terms'
+    | '/about/how-it-works'
     | '/classes/$slug'
     | '/practitioners/$slug'
     | '/practitioners/apply'
+    | '/shoppe/$slug'
     | '/classes/'
     | '/practitioners/'
+    | '/shoppe/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  MembershipRoute: typeof MembershipRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
   ClassesSlugRoute: typeof ClassesSlugRoute
   PractitionersSlugRoute: typeof PractitionersSlugRoute
   PractitionersApplyRoute: typeof PractitionersApplyRoute
+  ShoppeSlugRoute: typeof ShoppeSlugRoute
   ClassesIndexRoute: typeof ClassesIndexRoute
   PractitionersIndexRoute: typeof PractitionersIndexRoute
+  ShoppeIndexRoute: typeof ShoppeIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +219,48 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/how-it-works': {
+      id: '/about/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/about/how-it-works'
+      preLoaderRoute: typeof AboutHowItWorksRouteImport
+      parentRoute: typeof AboutRoute
     }
     '/classes/': {
       id: '/classes/'
@@ -152,16 +297,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PractitionersApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shoppe/': {
+      id: '/shoppe/'
+      path: '/shoppe'
+      fullPath: '/shoppe/'
+      preLoaderRoute: typeof ShoppeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shoppe/$slug': {
+      id: '/shoppe/$slug'
+      path: '/shoppe/$slug'
+      fullPath: '/shoppe/$slug'
+      preLoaderRoute: typeof ShoppeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AboutRouteChildren {
+  AboutHowItWorksRoute: typeof AboutHowItWorksRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutHowItWorksRoute: AboutHowItWorksRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRouteWithChildren,
+  ContactRoute: ContactRoute,
+  MembershipRoute: MembershipRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
   ClassesSlugRoute: ClassesSlugRoute,
   PractitionersSlugRoute: PractitionersSlugRoute,
   PractitionersApplyRoute: PractitionersApplyRoute,
+  ShoppeSlugRoute: ShoppeSlugRoute,
   ClassesIndexRoute: ClassesIndexRoute,
   PractitionersIndexRoute: PractitionersIndexRoute,
+  ShoppeIndexRoute: ShoppeIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
