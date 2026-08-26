@@ -46,7 +46,7 @@ function PractitionerPage() {
       <Section>
         <Reveal className="max-w-[58ch]">
           <Link to="/practitioners" className="type-label text-leaf no-underline">
-            ← All practitioners
+            ← All Practitioners
           </Link>
           <h1 className="type-hero mt-6 text-ink">{practitioner.name}</h1>
           <p className="type-accent mt-3 text-xl text-leaf">{practitioner.title}</p>
@@ -136,7 +136,7 @@ function PractitionerPage() {
           <Reveal>
             <Eyebrow withDot>Enquire</Eyebrow>
             <h2 className="type-h1 mt-5 max-w-[24ch] text-ink">
-              Ask about a session with {practitioner.name.split(" ")[0]}.
+              Book a Session with {practitioner.name.split(" ")[0]}
             </h2>
             <Prose className="mt-5">
               <p>
@@ -146,7 +146,7 @@ function PractitionerPage() {
             </Prose>
           </Reveal>
           <Reveal delay={130} className="emboss p-7 sm:p-9">
-            <EnquiryForm subject={`a session with ${practitioner.name}`} />
+            <EnquiryForm subject={`a session with ${practitioner.name}`} cta="Book a Session" />
           </Reveal>
         </div>
       </Section>

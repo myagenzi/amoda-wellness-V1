@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Lockup } from "@/components/brand/Lockup";
 import { EmailCaptureForm } from "@/components/forms/EmailCaptureForm";
-import { site } from "@/content/site";
+import { newsletter, site } from "@/content/site";
 
 const columns = [
   {
@@ -43,13 +43,8 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-10 border-b border-sage/15 pb-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
-            <h2 className="type-h2 max-w-[26ch] text-parchment">
-              Join our community of wellness seekers.
-            </h2>
-            <p className="mt-3 max-w-[52ch] text-sage/80">
-              Early access to new categories, retreats, and Shoppe drops — plus real wellness
-              guidance, straight to your inbox.
-            </p>
+            <h2 className="type-h2 max-w-[26ch] text-parchment">{newsletter.headline}</h2>
+            <p className="mt-3 max-w-[52ch] text-sage/80">{newsletter.body}</p>
           </div>
           <div className="lg:justify-self-end lg:pt-2">
             <EmailCaptureForm
