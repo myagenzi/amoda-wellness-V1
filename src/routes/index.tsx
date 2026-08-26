@@ -9,7 +9,7 @@ import { LotusMark, PetalDivider, LotusWatermark } from "@/components/brand/Lotu
 import { EmailCaptureForm } from "@/components/forms/EmailCaptureForm";
 import {
   audiences,
-  ecosystem,
+  
   finalCta,
   hero,
   manifesto,
