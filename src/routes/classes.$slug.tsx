@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { QuietLink } from "@/components/site/QuietButton";
@@ -104,16 +104,15 @@ function CategoryPage() {
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {matched.map((practitioner, index) => (
               <Reveal as="li" key={practitioner.slug} delay={index * 90}>
-                <QuietLink
+                <Link
                   to="/practitioners/$slug"
                   params={{ slug: practitioner.slug }}
-                  variant="quiet"
                   className="emboss emboss-lift flex h-full flex-col items-start gap-2 p-6 text-left no-underline"
                 >
                   <span className="type-h3 text-ink">{practitioner.name}</span>
                   <span className="type-caption text-leaf">{practitioner.title}</span>
                   <span className="mt-2 text-[0.9375rem] text-ink/75">{practitioner.location}</span>
-                </QuietLink>
+                </Link>
               </Reveal>
             ))}
           </ul>
