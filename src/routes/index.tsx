@@ -4,9 +4,9 @@ import { Reveal } from "@/components/site/Reveal";
 import { HeroVideo } from "@/components/site/HeroVideo";
 import { HeroTakeaways } from "@/components/site/HeroTakeaways";
 import { EcosystemScroller } from "@/components/site/EcosystemScroller";
+import { FreeClassBand } from "@/components/site/FreeClassBand";
 import { QuietLink } from "@/components/site/QuietButton";
 import { LotusMark, PetalDivider, LotusWatermark } from "@/components/brand/LotusMark";
-import { EmailCaptureForm } from "@/components/forms/EmailCaptureForm";
 import {
   audiences,
   
@@ -21,7 +21,7 @@ import {
   
   whoWeServe,
 } from "@/content/home";
-import { freeClass, site } from "@/content/site";
+import { site } from "@/content/site";
 import heroImage from "@/assets/hero-conversation.jpg";
 import problemImage from "@/assets/problem-window.jpg";
 import audienceWomen from "@/assets/audience-women.jpg";
