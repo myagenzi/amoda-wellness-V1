@@ -40,7 +40,7 @@ function PractitionersIndex() {
           poster={practitionersPoster}
           scrim="bg-practitioners-scrim-tight md:bg-practitioners-scrim"
           className="bg-parchment"
-          videoClassName="object-[68%_50%] md:object-[60%_50%]"
+          videoClassName="opacity-45 object-[86%_36%] md:opacity-100 md:object-[60%_50%]"
         />
         <div className="mx-auto w-full max-w-6xl">
           <Reveal className="max-w-[54ch]">
