@@ -38,7 +38,7 @@ function PractitionersIndex() {
         <VideoBackdrop
           video={practitionersVideo}
           poster={practitionersPoster}
-          scrim="bg-practitioners-scrim"
+          scrim="bg-practitioners-scrim-tight md:bg-practitioners-scrim"
           className="bg-parchment"
           videoClassName="object-[68%_50%] md:object-[60%_50%]"
         />
