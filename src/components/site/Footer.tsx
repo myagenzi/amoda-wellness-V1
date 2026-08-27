@@ -55,8 +55,9 @@ export function Footer() {
           playsInline
           preload="metadata"
         />
-        {/* Mild ink veil: keeps parchment type legible without dulling the footage. */}
-        <div className="absolute inset-0 bg-[color-mix(in_oklab,var(--ink)_22%,transparent)]" />
+        {/* Barely-there brand veil (~5%): keeps parchment type legible without dulling the footage. */}
+        <div className="absolute inset-0 bg-[color-mix(in_oklab,var(--ink)_5%,transparent)]" />
+        <div className="absolute inset-0 bg-[color-mix(in_oklab,var(--leaf)_4%,transparent)]" />
       </div>
 
       <footer className="liquid-glass glass-rise mx-auto w-full max-w-6xl rounded-3xl p-6 text-parchment md:p-10">
