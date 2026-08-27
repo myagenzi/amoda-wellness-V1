@@ -55,7 +55,11 @@ export function EmailCaptureForm({
             autoComplete="email"
             placeholder="you@email.com"
             invalid={!!errors.email}
-            className={ground === "dark" ? "bg-ink/40 text-parchment placeholder:text-sage/50" : ""}
+            className={
+              ground === "dark"
+                ? "!border-sage/35 !bg-ink/80 !text-parchment placeholder:!text-sage/55 focus:!border-sage"
+                : ""
+            }
           />
         </label>
         <QuietButton
