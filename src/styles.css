@@ -366,53 +366,11 @@
   line-height: 1.45;
 }
 
-/* Three-column schedule: wide class column + two narrow price columns. */
-@utility schedule-grid {
-  display: grid;
-  grid-template-columns: 1fr 16.5% 16.5%;
-  align-items: center;
-  @media (width < 820px) {
-    grid-template-columns: 1fr 24% 24%;
-  }
-}
-
-/* The floating parchment column — overhangs the header baseline by 1.5em. */
-@utility free-col {
-  background-color: var(--parchment);
-  border-radius: 14px;
-  box-shadow:
-    0 18px 40px -18px color-mix(in oklab, var(--ink) 55%, transparent),
-    0 2px 6px color-mix(in oklab, var(--ink) 18%, transparent);
-}
-
 /* ---- Manifesto lotus field: slow, living geometry ---- */
-
-/* Stroke trace-in — one time only on reveal. */
-@utility lotus-undrawn {
-  & * {
-    stroke-dasharray: 9000;
-    stroke-dashoffset: 9000;
-  }
-}
-
-@utility lotus-draw {
-  & * {
-    stroke-dasharray: 9000;
-    stroke-dashoffset: 9000;
-    animation: lotus-trace 2.4s var(--ease-settle) forwards;
-  }
-}
-
-@keyframes lotus-trace {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 /* Near-imperceptible continuous rotation — one turn in 240s. */
 @utility lotus-turn {
   animation: lotus-rotate 240s linear infinite;
-  transform-box: view-box;
 }
 
 @keyframes lotus-rotate {
