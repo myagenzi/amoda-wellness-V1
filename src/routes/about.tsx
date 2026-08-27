@@ -65,7 +65,7 @@ function AboutPage() {
               <p>That belief is the whole reason Amoda exists.</p>
             </Prose>
           </Reveal>
-          <Reveal delay={140} className="justify-self-center">
+          <Reveal delay={140} className="w-full">
             <LotusMorphReveal className="mx-auto max-w-[22rem] sm:max-w-[26rem] lg:max-w-none" />
           </Reveal>
         </div>
