@@ -58,7 +58,12 @@ function Home() {
             </h1>
             <p className="mt-7 max-w-[46ch] text-lg text-parchment/85">{hero.subheadline}</p>
             <div className="mt-10 flex flex-wrap items-center gap-5">
-              <QuietLink to="/classes" size="lg" variant="onInk">
+              <QuietLink
+                to="/classes"
+                size="lg"
+                variant="onInk"
+                className="glow-trail bg-ink/55 backdrop-blur-[2px]"
+              >
                 {hero.primaryCta}
               </QuietLink>
               <QuietLink
