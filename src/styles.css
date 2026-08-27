@@ -421,3 +421,44 @@
     opacity: 0.92;
   }
 }
+
+/* ---- Connector marquee: a slow continuous word band ---- */
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 48s linear infinite;
+}
+
+@utility marquee-track-fast {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 26s linear infinite;
+}
+
+@keyframes marquee-slide {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Soft horizontal fade so the band dissolves into the neighbouring frames. */
+@utility marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-fast {
+    animation: none;
+  }
+}
