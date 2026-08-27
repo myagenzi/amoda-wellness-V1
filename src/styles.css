@@ -178,6 +178,35 @@
   font-weight: 400;
 }
 
+/* A single word set in a Devanagari-flavoured Latin face — a quiet nod to the
+   Sanskrit root of "Amoda". Used only for the word "joy". */
+@utility type-joy {
+  font-family: "Yatra One", var(--font-display);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.86em;
+  letter-spacing: 0.005em;
+}
+
+/* Word-by-word blur-in for manifesto statements — slow, breathing. */
+@utility blur-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px);
+  transition:
+    opacity 1400ms var(--ease-settle),
+    filter 1400ms var(--ease-settle),
+    transform 1400ms var(--ease-settle);
+}
+
+@utility blur-word-in {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+
+
 @utility type-label {
   font-family: var(--font-body);
   font-weight: 500;
