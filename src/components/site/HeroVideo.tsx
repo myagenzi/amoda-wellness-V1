@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import heroVideo from "@/assets/hero-montage.mp4.asset.json";
+import heroVideo from "@/assets/hero-section.mp4.asset.json";
 import heroPoster from "@/assets/hero-poster.jpg.asset.json";
 
 /**
