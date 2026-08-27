@@ -616,58 +616,64 @@
 }
 
 /* ---- Hero CTA: a single warm point of light travelling the border line ----
-   Both pseudo-elements are masked to a hairline ring (padding + mask-composite:
-   exclude), so nothing paints across the button face. */
+   The ring layer is masked to a hairline (padding + mask-composite: exclude)
+   and holds a rotating conic gradient, so the light crawls the perimeter and
+   never paints across the button face. */
 
 @utility glow-trail {
   position: relative;
   isolation: isolate;
+  display: inline-flex;
+  border-radius: var(--radius-lg, 0.5rem);
 }
 
-.glow-trail::before,
-.glow-trail::after {
-  content: "";
+.glow-trail > .glow-trail-ring {
   position: absolute;
   inset: 0;
   border-radius: inherit;
   padding: 1px;
+  overflow: hidden;
   pointer-events: none;
   z-index: 1;
-  background: conic-gradient(
-    from var(--trail-angle, 0deg),
-    transparent 0deg,
-    transparent 250deg,
-    color-mix(in oklab, var(--gold) 35%, transparent) 316deg,
-    var(--gold) 344deg,
-    color-mix(in oklab, var(--gold) 30%, transparent) 356deg,
-    transparent 360deg
-  );
   mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  animation: trail-turn 9s linear infinite;
 }
 
-/* Ambient halo — the same ring, slightly larger and softened. */
-.glow-trail::after {
+.glow-trail > .glow-trail-ring.is-halo {
   inset: -2px;
   padding: 2px;
   filter: blur(4px);
-  opacity: 0.5;
+  opacity: 0.45;
   z-index: -1;
 }
 
-
-@property --trail-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
+.glow-trail-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 250deg,
+    color-mix(in oklab, var(--leaf) 45%, transparent) 300deg,
+    color-mix(in oklab, var(--gold) 45%, transparent) 332deg,
+    var(--gold) 350deg,
+    transparent 360deg
+  );
+  animation: trail-turn 9s linear infinite;
 }
 
 @keyframes trail-turn {
+  from {
+    rotate: 0deg;
+  }
   to {
-    --trail-angle: 360deg;
+    rotate: 360deg;
   }
 }
 
@@ -678,8 +684,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glow-trail::before,
-  .glow-trail::after,
+  .glow-trail-spin,
   .mark-drift {
     animation: none;
   }

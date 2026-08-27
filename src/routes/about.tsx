@@ -12,8 +12,8 @@ import { BlurWords } from "@/components/site/BlurWords";
 import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
 import missionVideo from "@/assets/mission.mp4.asset.json";
 import missionPoster from "@/assets/mission-poster.jpg.asset.json";
-import classesVideo from "@/assets/live-classes.mp4.asset.json";
-import classesPoster from "@/assets/live-classes-poster.jpg.asset.json";
+import manifestoVideo from "@/assets/manifesto.mp4.asset.json";
+import manifestoPoster from "@/assets/manifesto-poster.jpg.asset.json";
 
 const roles = [
   {
@@ -114,12 +114,15 @@ function AboutPage() {
         </div>
       </Section>
 
+      {/* Mission + Manifesto: one continuous dark passage, no seam between them */}
+      <div className="relative isolate bg-ink">
       {/* Our Mission — full-viewport cinematic frame */}
-      <section className="relative isolate flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+      <section className="relative flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
         <FadingVideo
           video={missionVideo}
           poster={missionPoster}
           scrim="bg-mission-scrim"
+          fadeEdge="bottom"
           videoClassName="scale-105 blur-[2px] saturate-[0.9] object-[50%_90%] md:object-[50%_100%]"
         />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-2 lg:gap-16">
@@ -151,12 +154,13 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Our Manifesto — full-viewport cinematic frame, words settling in */}
-      <section className="relative isolate flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+      {/* Our Manifesto — rises out of the Mission frame, words settling in */}
+      <section className="relative -mt-24 flex min-h-screen items-center overflow-hidden px-5 pt-32 pb-24 sm:px-8 md:pt-40 md:pb-32">
         <FadingVideo
-          video={classesVideo}
-          poster={classesPoster}
+          video={manifestoVideo}
+          poster={manifestoPoster}
           scrim="bg-trust-scrim"
+          fadeEdge="top"
           videoClassName="scale-105 blur-[3px] saturate-[0.85]"
         />
         <div className="relative z-10 mx-auto w-full max-w-3xl">
@@ -188,6 +192,7 @@ function AboutPage() {
           </div>
         </div>
       </section>
+      </div>
 
       <ConnectorMarquee />
     </>

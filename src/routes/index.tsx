@@ -58,14 +58,17 @@ function Home() {
             </h1>
             <p className="mt-7 max-w-[46ch] text-lg text-parchment/85">{hero.subheadline}</p>
             <div className="mt-10 flex flex-wrap items-center gap-5">
-              <QuietLink
-                to="/classes"
-                size="lg"
-                variant="onInk"
-                className="glow-trail"
-              >
-                {hero.primaryCta}
-              </QuietLink>
+              <span className="glow-trail">
+                <span className="glow-trail-ring is-halo" aria-hidden="true">
+                  <span className="glow-trail-spin" />
+                </span>
+                <span className="glow-trail-ring" aria-hidden="true">
+                  <span className="glow-trail-spin" />
+                </span>
+                <QuietLink to="/classes" size="lg" variant="onInk">
+                  {hero.primaryCta}
+                </QuietLink>
+              </span>
               <QuietLink
                 to="/classes"
                 hash="free-live-class"
