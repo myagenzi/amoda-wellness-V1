@@ -143,26 +143,8 @@ function Home() {
       <FreeClassBand />
 
 
-      {/* 6 — Trust / differentiation */}
-      <Section tone="ink" className="relative overflow-hidden">
-        <LotusWatermark className="pointer-events-none absolute -right-24 -bottom-32 w-[26rem]" />
-        <Reveal className="relative max-w-[52ch]">
-          <Eyebrow tone="sage">Trust</Eyebrow>
-          <h2 className="type-h1 mt-5 text-parchment">{trust.headline}</h2>
-          <p className="mt-6 text-sage/85">{trust.body}</p>
-          <p className="type-accent mt-6 text-xl text-sage">{trust.close}</p>
-        </Reveal>
-        <ul className="relative mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t border-sage/20 pt-8">
-          {trust.strip.map((item, index) => (
-            <Reveal as="li" key={item} delay={index * 80}>
-              <span className="type-label text-sage">✓ {item}</span>
-            </Reveal>
-          ))}
-        </ul>
-      </Section>
-
-      {/* 7 — Manifesto moment */}
-      <ManifestoBand />
+      {/* 6 + 7 — Trust and the Manifesto, merged over one abstract frame */}
+      <TrustManifestoBand />
 
       {/* 8 — Social proof */}
       <Section>
