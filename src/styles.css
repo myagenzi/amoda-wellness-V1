@@ -384,3 +384,58 @@
     0 18px 40px -18px color-mix(in oklab, var(--ink) 55%, transparent),
     0 2px 6px color-mix(in oklab, var(--ink) 18%, transparent);
 }
+
+/* ---- Manifesto lotus field: slow, living geometry ---- */
+
+/* Stroke trace-in — one time only on reveal. */
+@utility lotus-undrawn {
+  & * {
+    stroke-dasharray: 9000;
+    stroke-dashoffset: 9000;
+  }
+}
+
+@utility lotus-draw {
+  & * {
+    stroke-dasharray: 9000;
+    stroke-dashoffset: 9000;
+    animation: lotus-trace 2.4s var(--ease-settle) forwards;
+  }
+}
+
+@keyframes lotus-trace {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Near-imperceptible continuous rotation — one turn in 240s. */
+@utility lotus-turn {
+  animation: lotus-rotate 240s linear infinite;
+  transform-box: view-box;
+}
+
+@keyframes lotus-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Breathing scale/opacity sway — slow, hypnotic, never lockstep. */
+@utility lotus-breathe {
+  animation: lotus-breath 14s ease-in-out infinite;
+}
+
+@keyframes lotus-breath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.012);
+    opacity: 0.92;
+  }
+}
