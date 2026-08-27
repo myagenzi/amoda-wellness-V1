@@ -16,7 +16,7 @@ function GuideText({ text }: { text: string }) {
     let m: RegExpExecArray | null;
     while ((m = re.exec(text))) {
       if (m.index > last) out.push({ type: "text", value: text.slice(last, m.index) });
-      out.push({ type: "link", value: m[1], to: m[2] });
+      out.push({ type: "link", value: m[1] ?? "", to: m[2] ?? "/" });
       last = m.index + m[0].length;
     }
     if (last < text.length) out.push({ type: "text", value: text.slice(last) });
@@ -49,12 +49,14 @@ export function AmodaGuide() {
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [opener, setOpener] = useState(GUIDE_OPENERS[0]);
+  const [opener, setOpener] = useState<string>(GUIDE_OPENERS[0]);
   const [messages, setMessages] = useState<Msg[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setOpener(GUIDE_OPENERS[Math.floor(Math.random() * GUIDE_OPENERS.length)]);
+    setOpener(
+      GUIDE_OPENERS[Math.floor(Math.random() * GUIDE_OPENERS.length)] ?? GUIDE_OPENERS[0],
+    );
   }, []);
 
   useEffect(() => {
