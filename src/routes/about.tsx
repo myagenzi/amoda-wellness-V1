@@ -6,6 +6,9 @@ import { PetalDivider, LotusMark } from "@/components/brand/LotusMark";
 import { manifesto } from "@/content/home";
 import { site } from "@/content/site";
 import founderImage from "@/assets/founder.jpg";
+import { VideoBackdrop } from "@/components/site/VideoBackdrop";
+import missionVideo from "@/assets/mission.mp4.asset.json";
+import missionPoster from "@/assets/mission-poster.jpg.asset.json";
 
 const roles = [
   {
