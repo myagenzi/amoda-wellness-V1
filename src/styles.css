@@ -366,23 +366,23 @@
     );
 }
 
-/* Live Classes hero: green-tinted veil, heaviest top and bottom for type. */
+/* Live Classes hero: the footage stays visible — a 4% ink veil only, plus a
+   soft localized wash under the copy column so parchment type stays legible. */
 @utility bg-classes-scrim {
   background-image:
     linear-gradient(
-      to bottom,
-      color-mix(in oklab, var(--ink) 86%, transparent) 0%,
-      color-mix(in oklab, var(--ink) 62%, transparent) 40%,
-      color-mix(in oklab, var(--ink) 74%, transparent) 72%,
-      color-mix(in oklab, var(--ink) 92%, transparent) 100%
+      to right,
+      color-mix(in oklab, var(--ink) 46%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 26%, transparent) 46%,
+      transparent 72%
     ),
     linear-gradient(
-      104deg,
-      color-mix(in oklab, var(--leaf) 46%, transparent) 0%,
-      color-mix(in oklab, var(--leaf) 18%, transparent) 58%,
-      color-mix(in oklab, var(--sage) 14%, transparent) 100%
+      to bottom,
+      color-mix(in oklab, var(--ink) 4%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 4%, transparent) 100%
     );
 }
+
 
 /* Our Mission: leaf-to-ink diagonal wash with a warm parchment glow on the
    text side — brand greens, never black. */
