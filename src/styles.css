@@ -586,7 +586,9 @@
   }
 }
 
-/* ---- Hero CTA: an ambient gold-to-leaf light travelling the perimeter ---- */
+/* ---- Hero CTA: a single warm point of light travelling the border line ----
+   Both pseudo-elements are masked to a hairline ring (padding + mask-composite:
+   exclude), so nothing paints across the button face. */
 
 @utility glow-trail {
   position: relative;
@@ -597,26 +599,36 @@
 .glow-trail::after {
   content: "";
   position: absolute;
-  inset: -2px;
+  inset: 0;
   border-radius: inherit;
-  z-index: -1;
+  padding: 1px;
+  pointer-events: none;
+  z-index: 1;
   background: conic-gradient(
     from var(--trail-angle, 0deg),
     transparent 0deg,
-    transparent 190deg,
-    color-mix(in oklab, var(--leaf) 70%, transparent) 250deg,
-    var(--gold) 320deg,
-    color-mix(in oklab, var(--gold) 40%, transparent) 348deg,
+    transparent 250deg,
+    color-mix(in oklab, var(--gold) 35%, transparent) 316deg,
+    var(--gold) 344deg,
+    color-mix(in oklab, var(--gold) 30%, transparent) 356deg,
     transparent 360deg
   );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
   animation: trail-turn 9s linear infinite;
 }
 
+/* Ambient halo — the same ring, slightly larger and softened. */
 .glow-trail::after {
-  inset: -7px;
-  filter: blur(9px);
-  opacity: 0.55;
+  inset: -2px;
+  padding: 2px;
+  filter: blur(4px);
+  opacity: 0.5;
+  z-index: -1;
 }
+
 
 @property --trail-angle {
   syntax: "<angle>";
