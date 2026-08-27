@@ -5,6 +5,7 @@ import { HeroVideo } from "@/components/site/HeroVideo";
 import { HeroTakeaways } from "@/components/site/HeroTakeaways";
 import { EcosystemScroller } from "@/components/site/EcosystemScroller";
 import { FreeClassBand } from "@/components/site/FreeClassBand";
+import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
 import { TrustManifestoBand } from "@/components/site/TrustManifestoBand";
 import { QuietLink } from "@/components/site/QuietButton";
 import { LotusMark } from "@/components/brand/LotusMark";
@@ -138,6 +139,9 @@ function Home() {
 
       {/* 5 — Free live class banner */}
       <FreeClassBand />
+
+      {/* Connector — what Amoda means, drifting between the two frames */}
+      <ConnectorMarquee />
 
 
       {/* 6 + 7 — Trust and the Manifesto, merged over one abstract frame */}

@@ -17,7 +17,7 @@ export function FreeClassBand() {
   return (
     <section
       id="free-live-class"
-      className="relative isolate overflow-hidden bg-ink px-5 py-24 sm:px-8 md:py-32"
+      className="relative isolate overflow-hidden bg-ink px-5 py-20 sm:px-8 md:py-26"
     >
       <picture>
         <source media="(max-width: 819px)" srcSet={bgMobile} />
