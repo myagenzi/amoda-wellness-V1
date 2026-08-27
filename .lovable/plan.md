@@ -5,9 +5,9 @@ Turn the plain parchment hero at the top of the Practitioners page into a full-b
 ## What changes
 
 - The uploaded clip (1920x1080, 4s, silent-muted loop) becomes the hero's background, cropped to fill the band on every breakpoint.
-- A brand-green veil sits over the video — deep ink at the top and bottom where type lands, easing to a leaf/sage wash in the middle. No black overlays.
-- Hero copy is re-set light-on-dark: eyebrow in Sage, headline and paragraph in Parchment with a soft ink text-shadow, so nothing mixes into the footage.
-- The trust strip ("✓ Verified credentials…") moves onto a hairline row inside the band, sage-toned, sitting under the copy rather than on parchment below it.
+- The veil stays very light — roughly 10% brand-green tint over the footage, never a dark wash. The video reads clearly; the overlay only unifies its colour with the site palette.
+- Because the veil is that light, legibility comes from the type itself rather than a heavy scrim: hero copy sits on a soft localised gradient behind the text column plus a gentle ink text-shadow, so the headline and paragraph stay crisp while the rest of the frame stays bright.
+- The trust strip ("✓ Verified credentials…") moves onto a hairline row inside the band, under the copy rather than on parchment below it.
 - The copy column stays left-aligned and capped at ~54ch so the right side of the frame stays open for the footage.
 - Everything below the hero (filter/browse band, practitioner cards) is untouched.
 
