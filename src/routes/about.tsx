@@ -154,12 +154,13 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Our Manifesto — full-viewport cinematic frame, words settling in */}
-      <section className="relative isolate flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+      {/* Our Manifesto — rises out of the Mission frame, words settling in */}
+      <section className="relative -mt-24 flex min-h-screen items-center overflow-hidden px-5 pt-32 pb-24 sm:px-8 md:pt-40 md:pb-32">
         <FadingVideo
-          video={classesVideo}
-          poster={classesPoster}
+          video={manifestoVideo}
+          poster={manifestoPoster}
           scrim="bg-trust-scrim"
+          fadeEdge="top"
           videoClassName="scale-105 blur-[3px] saturate-[0.85]"
         />
         <div className="relative z-10 mx-auto w-full max-w-3xl">
@@ -191,6 +192,7 @@ function AboutPage() {
           </div>
         </div>
       </section>
+      </div>
 
       <ConnectorMarquee />
     </>
