@@ -101,16 +101,24 @@ function AboutPage() {
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-2">
+      <section className="relative isolate overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+        <VideoBackdrop
+          video={missionVideo}
+          poster={missionPoster}
+          scrim="bg-mission-scrim"
+          videoClassName="scale-105 blur-[2px] saturate-[0.9]"
+        />
+        <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow>Our Mission</Eyebrow>
-            <p className="type-h2 mt-5 max-w-[38ch] text-ink">
+            <Eyebrow tone="sage">Our Mission</Eyebrow>
+            <p className="type-h2 mt-5 max-w-[38ch] text-parchment [text-shadow:0_2px_16px_var(--ink)]">
               To connect people with trusted wellness experts, transformative live classes and
               coaching, and supportive communities that nurture the body, mind, emotions, and spirit.
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <Eyebrow>Where We're Headed</Eyebrow>
-            <Prose className="mt-5">
+            <Eyebrow tone="sage">Where We're Headed</Eyebrow>
+            <Prose className="mt-5 text-parchment/85">
               <p>
                 From Ottawa to India to the world — Amoda is building toward becoming the first name
                 people think of when they seek trusted wellness support. Not just a platform. A
@@ -118,16 +126,17 @@ function AboutPage() {
               </p>
             </Prose>
             <div className="mt-8 flex flex-wrap gap-4">
-              <QuietLink to="/about/how-it-works" variant="outline">
+              <QuietLink to="/about/how-it-works" variant="outline" ground="dark">
                 How Amoda Works
               </QuietLink>
-              <QuietLink to="/practitioners" variant="quiet">
+              <QuietLink to="/practitioners" variant="quiet" ground="dark">
                 Meet Our Practitioners
               </QuietLink>
             </div>
           </Reveal>
         </div>
-      </Section>
+      </section>
+
 
       <Section tone="ink">
         <div className="mx-auto max-w-3xl text-center">
