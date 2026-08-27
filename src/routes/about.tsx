@@ -127,10 +127,10 @@ function AboutPage() {
               </p>
             </Prose>
             <div className="mt-8 flex flex-wrap gap-4">
-              <QuietLink to="/about/how-it-works" variant="outline" ground="dark">
+              <QuietLink to="/about/how-it-works" variant="onInk">
                 How Amoda Works
               </QuietLink>
-              <QuietLink to="/practitioners" variant="quiet" ground="dark">
+              <QuietLink to="/practitioners" variant="quiet" className="text-sage hover:text-parchment">
                 Meet Our Practitioners
               </QuietLink>
             </div>
