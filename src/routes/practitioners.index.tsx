@@ -5,6 +5,9 @@ import { QuietLink } from "@/components/site/QuietButton";
 import { practitioners } from "@/content/practitioners";
 import { browseLabels, categories } from "@/content/categories";
 import { trust } from "@/content/home";
+import { VideoBackdrop } from "@/components/site/VideoBackdrop";
+import practitionersVideo from "@/assets/practitioners.mp4.asset.json";
+import practitionersPoster from "@/assets/practitioners-poster.jpg.asset.json";
 
 const seo = {
   title: "Find a Trusted Wellness Practitioner | Amoda Wellness",
