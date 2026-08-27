@@ -624,6 +624,7 @@
   isolation: isolate;
 }
 
+/* Border-only trail: a rotating conic layer, masked down to the 1px ring. */
 .glow-trail::before,
 .glow-trail::after {
   content: "";
@@ -632,20 +633,30 @@
   border-radius: inherit;
   padding: 1px;
   pointer-events: none;
+  overflow: hidden;
   z-index: 1;
-  background: conic-gradient(
-    from var(--trail-angle, 0deg),
-    transparent 0deg,
-    transparent 250deg,
-    color-mix(in oklab, var(--gold) 35%, transparent) 316deg,
-    var(--gold) 344deg,
-    color-mix(in oklab, var(--gold) 30%, transparent) 356deg,
-    transparent 360deg
-  );
   mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
+  background: transparent;
+}
+
+.glow-trail::before {
+  /* the travelling light itself */
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 250deg,
+      color-mix(in oklab, var(--leaf) 45%, transparent) 300deg,
+      color-mix(in oklab, var(--gold) 45%, transparent) 330deg,
+      var(--gold) 348deg,
+      transparent 360deg
+    );
+  background-size: 300% 300%;
+  background-position: center;
+  background-repeat: no-repeat;
   animation: trail-turn 9s linear infinite;
 }
 
@@ -654,20 +665,29 @@
   inset: -2px;
   padding: 2px;
   filter: blur(4px);
-  opacity: 0.5;
+  opacity: 0.45;
   z-index: -1;
-}
-
-
-@property --trail-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 250deg,
+      color-mix(in oklab, var(--gold) 30%, transparent) 330deg,
+      color-mix(in oklab, var(--gold) 70%, transparent) 348deg,
+      transparent 360deg
+    );
+  background-size: 300% 300%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: trail-turn 9s linear infinite;
 }
 
 @keyframes trail-turn {
+  from {
+    rotate: 0deg;
+  }
   to {
-    --trail-angle: 360deg;
+    rotate: 360deg;
   }
 }
 
