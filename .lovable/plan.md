@@ -1,21 +1,33 @@
-# Manifesto background: the actual Amoda logo, oversized and moving
+# Two homepage section fixes
 
-Right now the manifesto section's background is an abstracted hairline construction (big outer ring, inner ring, traced petal linework). That gets removed and replaced with the real Amoda lotus mark — the same shape used in the header — scaled enormous behind the words, blended into the ink-green field, and slowly moving.
+## 1. Free This Week — restore the previous content in the new design
 
-Text content and layout stay exactly as they are.
+The schedule table (Class & Practitioner / This Week / Regular Booking columns, prices, totals row, floating parchment highlight column) is what looks imbalanced. It goes away entirely.
 
-## What changes
+**Keep from the current design:**
+- Full-bleed background stills (desktop + mobile), warm-green scrim, fluid cqw type, frosted-glass treatment.
+- Section shell, spacing, and the overall layered atmosphere.
 
-- Remove the abstract linework field entirely (rings + traced petals + the stroke trace-in animation).
-- In its place: one oversized instance of the real Amoda mark (`LotusMark`, dark-ground variant so petals read as sage on ink, gold centre intact), centered behind the copy, wider than the section so the outer edges bleed off both sides.
-- Blend it in rather than stamp it on: very low opacity, a soft blur so it reads as atmosphere, and a radial mask so the centre fades out where the type sits — the words stay fully legible with nothing crossing them at readable contrast.
-- Keep the motion restrained and continuous: one very slow rotation (~240s per turn) plus the existing slow breathing sway. No trace-in, no entrance animation.
-- Respect `prefers-reduced-motion`: the mark still shows, static.
+**Bring back the previous content** (from `src/content/site.ts` `freeClass`):
+- Eyebrow: "Free live class this week"
+- Headline: "Try Amoda for free — no card, no commitment."
+- Body: "Every week, we open one live class to everyone — free. This week: Yoga Classes with Hannah Osei."
+- The email capture form ("Reserve Your Free Spot") with its success state and the "Email only…" reassurance line.
 
-## Technical notes
+**Restyle that content into the new look:**
+- Two-column layout on desktop (copy left, form right), stacking on mobile.
+- Copy in parchment on the scrim — same type scale as now.
+- The form sits in a **frosted-glass card** (existing `frost` treatment, parchment text, gold/leaf accents) instead of the old cream emboss card, so nothing reads as a stark white slab.
+- CTAs: the form's parchment button stays; add the quiet "See Full Schedule" glass link next to it.
+- Clean up: remove the schedule data, `schedule-grid`/`free-col` CSS if unused elsewhere, and unused imports.
 
-- `src/components/brand/LotusField.tsx` is rewritten to render `<LotusMark variant="ring" ground="dark" />` inside a positioned, masked wrapper instead of hand-drawn SVG paths. It no longer needs the IntersectionObserver or draw state.
-- Blend handled by the wrapper: `opacity` ~0.10–0.14, `filter: blur(1px)`, and `mask-image: radial-gradient(...)` punching a soft hole through the middle third.
-- `src/styles.css`: drop the now-unused `lotus-undrawn` / `lotus-draw` utilities and the `lotus-trace` keyframes; keep `lotus-turn` and `lotus-breathe`, and add a reduced-motion guard that disables both.
-- `src/components/site/ManifestoBand.tsx` keeps its current structure, vignette and text mapping unchanged.
-- Verify at desktop and mobile widths that no petal edge sits behind a line of text at high enough contrast to distract.
+## 2. Manifesto — replace abstract linework with the real Amoda logo
+
+- Remove the hand-drawn ring/petal linework and its trace-in animation from `LotusField`.
+- Render the actual Amoda mark (`LotusMark`, dark-ground variant, gold centre intact), oversized so it bleeds off the edges, centered behind the manifesto copy.
+- Blend: low opacity, slight blur, and a radial mask fading the centre so text stays fully legible.
+- Motion: keep the slow continuous rotation (~240s) and breathing sway; static under `prefers-reduced-motion`.
+- Manifesto text, layout, and vignette unchanged.
+
+## Verification
+- Desktop + mobile screenshots of both sections: no white imbalance in Free This Week, logo blended behind manifesto text without hurting legibility, zero console errors.
