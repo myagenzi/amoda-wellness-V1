@@ -7,6 +7,9 @@ import { categories } from "@/content/categories";
 import { categoryImage } from "@/content/images";
 import { freeClass } from "@/content/site";
 import shoppeImage from "@/assets/shoppe-still-life.jpg";
+import { VideoBackdrop } from "@/components/site/VideoBackdrop";
+import classesVideo from "@/assets/live-classes.mp4.asset.json";
+import classesPoster from "@/assets/live-classes-poster.jpg.asset.json";
 
 const seo = {
   title: "Live Wellness Classes & Coaching | Amoda Wellness",
