@@ -25,7 +25,7 @@ export function TrustManifestoBand() {
           height={1280}
           loading="lazy"
           aria-hidden="true"
-          className="absolute inset-0 -z-20 size-full object-cover saturate-[0.8]"
+          className="absolute inset-0 -z-20 size-full object-cover object-[center_38%] saturate-[0.8]"
         />
       </picture>
       <div className="absolute inset-0 -z-10 bg-trust-scrim" aria-hidden="true" />
