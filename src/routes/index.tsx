@@ -5,20 +5,17 @@ import { HeroVideo } from "@/components/site/HeroVideo";
 import { HeroTakeaways } from "@/components/site/HeroTakeaways";
 import { EcosystemScroller } from "@/components/site/EcosystemScroller";
 import { FreeClassBand } from "@/components/site/FreeClassBand";
-import { ManifestoBand } from "@/components/site/ManifestoBand";
+import { TrustManifestoBand } from "@/components/site/TrustManifestoBand";
 import { QuietLink } from "@/components/site/QuietButton";
-import { LotusMark, LotusWatermark } from "@/components/brand/LotusMark";
+import { LotusMark } from "@/components/brand/LotusMark";
 import {
   audiences,
-
   finalCta,
   hero,
   problem,
   seo,
   socialProof,
   testimonials,
-  trust,
-
   whoWeServe,
 } from "@/content/home";
 
