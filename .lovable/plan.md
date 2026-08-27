@@ -20,6 +20,6 @@ Turn the plain parchment hero at the top of the Practitioners page into a full-b
 ## Technical notes
 
 - Upload the clip and an extracted poster frame to the CDN via `lovable-assets`, producing `src/assets/practitioners.mp4.asset.json` and `src/assets/practitioners-poster.jpg.asset.json`; the binary itself is not committed.
-- Reuse the existing `VideoBackdrop` component; add a `bg-practitioners-scrim` utility in `src/styles.css` built from the same `color-mix` ink/leaf/sage gradients as `bg-classes-scrim`.
-- In `src/routes/practitioners.index.tsx`, replace the first `<Section>` with a `relative isolate overflow-hidden` band containing `VideoBackdrop` plus the existing `Reveal` copy; text tokens switch to `text-parchment` / `text-sage`.
+- Reuse the existing `VideoBackdrop` component; add a `bg-practitioners-scrim` utility in `src/styles.css` that is a ~10% leaf/ink `color-mix` tint only, plus a narrow localised gradient behind the left copy column for contrast.
+- In `src/routes/practitioners.index.tsx`, replace the first `<Section>` with a `relative isolate overflow-hidden` band containing `VideoBackdrop` plus the existing `Reveal` copy; text colour is chosen after seeing the footage's brightness (parchment or ink) so it reads against a near-untinted video.
 - Verify at desktop, laptop and mobile widths with screenshots that the headline, paragraph and trust row all read clearly over the footage before calling it done.
