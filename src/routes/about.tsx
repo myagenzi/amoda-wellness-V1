@@ -99,8 +99,6 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-2">
       <section className="relative isolate overflow-hidden px-5 py-24 sm:px-8 md:py-32">
         <VideoBackdrop
           video={missionVideo}
