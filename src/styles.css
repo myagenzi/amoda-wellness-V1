@@ -417,23 +417,23 @@
       color-mix(in oklab, var(--leaf) 10%, transparent) 0%,
       color-mix(in oklab, var(--leaf) 10%, transparent) 100%
     );
+}
 
-  /* Narrow viewports: the copy fills the frame, so carry the wash further
-     across so the halftone hands never sit under the paragraph. */
-  @media (max-width: 767px) {
-    background-image:
-      linear-gradient(
-        to right,
-        color-mix(in oklab, var(--parchment) 92%, transparent) 0%,
-        color-mix(in oklab, var(--parchment) 82%, transparent) 55%,
-        color-mix(in oklab, var(--parchment) 45%, transparent) 100%
-      ),
-      linear-gradient(
-        to bottom,
-        color-mix(in oklab, var(--leaf) 10%, transparent) 0%,
-        color-mix(in oklab, var(--leaf) 10%, transparent) 100%
-      );
-  }
+/* Narrow viewports: the copy fills the frame, so the wash carries further
+   across and the halftone hands never sit under the paragraph. */
+@utility bg-practitioners-scrim-tight {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--parchment) 93%, transparent) 0%,
+      color-mix(in oklab, var(--parchment) 84%, transparent) 58%,
+      color-mix(in oklab, var(--parchment) 46%, transparent) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--leaf) 10%, transparent) 0%,
+      color-mix(in oklab, var(--leaf) 10%, transparent) 100%
+    );
 }
 
 
