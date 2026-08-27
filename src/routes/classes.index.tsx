@@ -29,21 +29,32 @@ export const Route = createFileRoute("/classes/")({
 function ClassesIndex() {
   return (
     <>
-      <Section>
-        <Reveal className="max-w-[52ch]">
-          <Eyebrow withDot>Live Classes &amp; Coaching</Eyebrow>
-          <h1 className="type-hero mt-6 text-ink">
-            Real support, live and online — wherever you are.
-          </h1>
-          <Prose className="mt-6">
-            <p>
-              Amoda's launch offerings are simple by design: live classes and 1:1 consulting with
-              practitioners you can trust. No pre-recorded filler — real people, real time, real
-              guidance.
-            </p>
-          </Prose>
-        </Reveal>
-      </Section>
+      <section className="relative isolate overflow-hidden px-5 py-28 sm:px-8 md:py-40">
+        <VideoBackdrop
+          video={classesVideo}
+          poster={classesPoster}
+          scrim="bg-classes-scrim"
+          videoClassName="scale-105 blur-[2px] saturate-[0.85]"
+        />
+        <div className="mx-auto w-full max-w-6xl">
+          <Reveal className="max-w-[52ch]">
+            <Eyebrow tone="sage" withDot>
+              Live Classes &amp; Coaching
+            </Eyebrow>
+            <h1 className="type-hero mt-6 text-parchment [text-shadow:0_2px_18px_var(--ink)]">
+              Real support, live and online — wherever you are.
+            </h1>
+            <Prose className="mt-6 text-parchment/85">
+              <p>
+                Amoda's launch offerings are simple by design: live classes and 1:1 consulting with
+                practitioners you can trust. No pre-recorded filler — real people, real time, real
+                guidance.
+              </p>
+            </Prose>
+          </Reveal>
+        </div>
+      </section>
+
 
       <Section tone="card">
         <ul className="grid gap-8 md:grid-cols-2">
