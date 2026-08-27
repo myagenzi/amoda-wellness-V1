@@ -366,6 +366,41 @@
     );
 }
 
+/* Live Classes hero: green-tinted veil, heaviest top and bottom for type. */
+@utility bg-classes-scrim {
+  background-image:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--ink) 86%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 62%, transparent) 40%,
+      color-mix(in oklab, var(--ink) 74%, transparent) 72%,
+      color-mix(in oklab, var(--ink) 92%, transparent) 100%
+    ),
+    linear-gradient(
+      104deg,
+      color-mix(in oklab, var(--leaf) 46%, transparent) 0%,
+      color-mix(in oklab, var(--leaf) 18%, transparent) 58%,
+      color-mix(in oklab, var(--sage) 14%, transparent) 100%
+    );
+}
+
+/* Our Mission: leaf-to-ink diagonal wash with a warm parchment glow on the
+   text side — brand greens, never black. */
+@utility bg-mission-scrim {
+  background-image:
+    radial-gradient(
+      120% 90% at 8% 30%,
+      color-mix(in oklab, var(--parchment) 16%, transparent) 0%,
+      transparent 62%
+    ),
+    linear-gradient(
+      112deg,
+      color-mix(in oklab, var(--ink) 90%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 72%, transparent) 46%,
+      color-mix(in oklab, var(--leaf) 58%, transparent) 100%
+    );
+}
+
 /* Fluid, container-relative type for the band (measurement-driven scale). */
 @utility band-cq {
   container-type: inline-size;
