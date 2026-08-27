@@ -61,42 +61,43 @@ export function LotusField({ className }: { className?: string }) {
         <circle
           cx="300"
           cy="300"
-          r="285"
+          r="320"
           fill="none"
-          stroke="url(#manifestoField)"
-          strokeWidth="1"
-          opacity="0.55"
+          stroke="var(--color-sage)"
+          strokeWidth="1.2"
+          opacity="0.35"
         />
 
         {/* Inner hairline ring */}
         <circle
           cx="300"
           cy="300"
-          r="138"
+          r="148"
           fill="none"
-          stroke="var(--color-sage)"
-          strokeWidth="0.9"
-          opacity="0.18"
+          stroke="var(--color-parchment)"
+          strokeWidth="0.7"
+          opacity="0.12"
         />
 
-        {/* Six petals at 60° intervals — larger so they bleed past the frame. */}
+        {/* Six petals at 60° intervals, large enough to bleed past the frame. */}
         {[0, 60, 120, 180, 240, 300].map((deg, i) => (
           <ellipse
             key={deg}
             cx="300"
             cy="300"
-            rx="42"
-            ry="268"
+            rx="56"
+            ry="320"
             fill="none"
             stroke="var(--color-sage)"
-            strokeWidth="1"
-            opacity={0.14 + (i % 2) * 0.05}
+            strokeWidth="1.2"
+            opacity={0.2 + (i % 2) * 0.08}
             transform={`rotate(${deg} 300 300)`}
             className="lotus-petal"
             style={{ transformBox: "fill-box", transformOrigin: "center" }}
           />
         ))}
       </g>
+
 
     </svg>
   );
