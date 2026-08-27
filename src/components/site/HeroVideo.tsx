@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import heroVideo from "@/assets/hero-section.mp4.asset.json";
-import heroPoster from "@/assets/hero-poster.jpg.asset.json";
+import heroVideo from "@/assets/hero-section-04.mp4.asset.json";
+import heroPoster from "@/assets/hero-poster-04.jpg.asset.json";
 
 /**
  * Full-bleed hero stage: looping macro montage behind an ink scrim so parchment
