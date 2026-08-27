@@ -7,9 +7,13 @@ import { LotusMorphReveal } from "@/components/brand/LotusMorphReveal";
 import { manifesto } from "@/content/home";
 import { site } from "@/content/site";
 import founderImage from "@/assets/founder.jpg";
-import { VideoBackdrop } from "@/components/site/VideoBackdrop";
+import { FadingVideo } from "@/components/site/FadingVideo";
+import { BlurWords } from "@/components/site/BlurWords";
+import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
 import missionVideo from "@/assets/mission.mp4.asset.json";
 import missionPoster from "@/assets/mission-poster.jpg.asset.json";
+import classesVideo from "@/assets/live-classes.mp4.asset.json";
+import classesPoster from "@/assets/live-classes-poster.jpg.asset.json";
 
 const roles = [
   {
@@ -47,17 +51,19 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const [manifestoLead, ...manifestoRest] = manifesto;
+
   return (
     <>
-      <Section>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <Reveal className="max-w-[54ch]">
+      <Section className="md:py-32">
+        <div className="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+          <Reveal className="max-w-[52ch]">
             <Eyebrow withDot>About Amoda</Eyebrow>
-            <h1 className="type-hero mt-6 text-ink">
-              Amoda means <span className="type-accent">joy.</span>
+            <h1 className="type-hero mt-10 text-ink">
+              Amoda means <span className="type-joy text-leaf">joy.</span>
             </h1>
-            <p className="type-caption mt-4 text-leaf">(Sanskrit for joy, delight)</p>
-            <Prose className="mt-6">
+            <p className="type-caption mt-6 text-leaf">(Sanskrit for joy, delight)</p>
+            <Prose className="mt-10 space-y-7">
               <p>
                 We believe wellness isn't the absence of illness — it's the presence of vitality,
                 connection, balance, and joy in everyday life.
@@ -66,7 +72,7 @@ function AboutPage() {
             </Prose>
           </Reveal>
           <Reveal delay={140} className="w-full">
-            <LotusMorphReveal className="mx-auto max-w-[22rem] sm:max-w-[26rem] lg:max-w-none" />
+            <LotusMorphReveal className="mx-auto w-full max-w-[30rem] sm:max-w-[36rem] lg:max-w-[42rem]" />
           </Reveal>
         </div>
       </Section>
@@ -108,31 +114,32 @@ function AboutPage() {
         </div>
       </Section>
 
-      <section className="relative isolate overflow-hidden px-5 py-24 sm:px-8 md:py-32">
-        <VideoBackdrop
+      {/* Our Mission — full-viewport cinematic frame */}
+      <section className="relative isolate flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+        <FadingVideo
           video={missionVideo}
           poster={missionPoster}
           scrim="bg-mission-scrim"
           videoClassName="scale-105 blur-[2px] saturate-[0.9] object-[50%_90%] md:object-[50%_100%]"
         />
-        <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-2">
+        <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <Eyebrow tone="sage">Our Mission</Eyebrow>
-            <p className="type-h2 mt-5 max-w-[38ch] text-parchment [text-shadow:0_2px_16px_var(--ink)]">
+            <p className="type-h2 mt-6 max-w-[38ch] text-parchment [text-shadow:0_2px_16px_var(--ink)]">
               To connect people with trusted wellness experts, transformative live classes and
               coaching, and supportive communities that nurture the body, mind, emotions, and spirit.
             </p>
           </Reveal>
           <Reveal delay={120}>
             <Eyebrow tone="sage">Where We're Headed</Eyebrow>
-            <Prose className="mt-5 text-parchment/85">
+            <Prose className="mt-6 text-parchment/85">
               <p>
                 From Ottawa to India to the world — Amoda is building toward becoming the first name
                 people think of when they seek trusted wellness support. Not just a platform. A
                 global village of wellness.
               </p>
             </Prose>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="liquid-glass mt-10 flex flex-wrap items-center gap-5 rounded-2xl px-6 py-5">
               <QuietLink to="/about/how-it-works" variant="onInk">
                 How Amoda Works
               </QuietLink>
@@ -144,26 +151,46 @@ function AboutPage() {
         </div>
       </section>
 
-
-      <Section tone="ink">
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
+      {/* Our Manifesto — full-viewport cinematic frame, words settling in */}
+      <section className="relative isolate flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+        <FadingVideo
+          video={classesVideo}
+          poster={classesPoster}
+          scrim="bg-trust-scrim"
+          videoClassName="scale-105 blur-[3px] saturate-[0.85]"
+        />
+        <div className="relative z-10 mx-auto w-full max-w-3xl">
+          <div className="liquid-glass rounded-3xl px-6 py-14 text-center sm:px-12 md:py-16">
             <LotusMark variant="ring" ground="dark" className="mx-auto w-14" />
             <div className="mt-8">
               <Eyebrow tone="sage">Our Manifesto</Eyebrow>
             </div>
-            <div className="mt-8 space-y-6">
-              {manifesto.map((line) => (
-                <p key={line} className="type-h2 text-parchment">
-                  {line}
-                </p>
+            <div className="mt-10 space-y-8">
+              {manifestoLead ? (
+                <BlurWords
+                  text={manifestoLead}
+                  className="type-h2 text-parchment"
+                  stagger={140}
+                />
+              ) : null}
+              {manifestoRest.map((line, index) => (
+                <BlurWords
+                  key={line}
+                  text={line}
+                  className="type-h2 text-parchment"
+                  startDelay={140 + index * 120}
+                  stagger={140}
+                />
               ))}
             </div>
-            <PetalDivider className="mx-auto mt-10 w-28 text-sage" />
+            <PetalDivider className="mx-auto mt-12 w-28 text-sage" />
             <p className="type-accent mt-8 text-xl text-sage">{site.tagline}</p>
-          </Reveal>
+          </div>
         </div>
-      </Section>
+      </section>
+
+      <ConnectorMarquee />
     </>
   );
 }
+
