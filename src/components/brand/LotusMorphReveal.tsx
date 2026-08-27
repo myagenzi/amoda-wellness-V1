@@ -122,9 +122,10 @@ export function LotusMorphReveal({ className }: { className?: string }) {
       if (pointer.active && headRadius > 4) push(pointer.x, pointer.y);
 
       for (let i = trail.length - 1; i >= 0; i--) {
-        trail[i].a *= 0.955;
-        trail[i].r *= 0.995;
-        if (trail[i].a < 0.04) trail.splice(i, 1);
+        const p = trail[i]!;
+        p.a *= 0.955;
+        p.r *= 0.995;
+        if (p.a < 0.04) trail.splice(i, 1);
       }
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
