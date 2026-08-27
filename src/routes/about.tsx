@@ -12,8 +12,8 @@ import { BlurWords } from "@/components/site/BlurWords";
 import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
 import missionVideo from "@/assets/mission.mp4.asset.json";
 import missionPoster from "@/assets/mission-poster.jpg.asset.json";
-import classesVideo from "@/assets/live-classes.mp4.asset.json";
-import classesPoster from "@/assets/live-classes-poster.jpg.asset.json";
+import manifestoVideo from "@/assets/manifesto.mp4.asset.json";
+import manifestoPoster from "@/assets/manifesto-poster.jpg.asset.json";
 
 const roles = [
   {
