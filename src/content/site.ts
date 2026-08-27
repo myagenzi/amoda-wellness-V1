@@ -46,3 +46,30 @@ export const newsletter = {
   headline: "Join our community of wellness seekers.",
   body: "Get early access to new categories, retreats, and Shoppe drops — plus real wellness guidance, straight to your inbox.",
 } as const;
+
+/** Top-of-site announcement strip. */
+export const announcement = {
+  text: "Founding members get early access to new categories, retreats, Shoppe drops and more…",
+  to: "/membership",
+} as const;
+
+/**
+ * Connector band between the free-class frame and the Trust + Manifesto frame —
+ * what Amoda means, in synonyms, and what people actually leave with.
+ */
+export const connectorWords = [
+  "Belonging",
+  "Clarity",
+  "Steadiness",
+  "Real practitioners",
+  "Rooted in tradition",
+  "Coming home to yourself",
+  "Calm that lasts",
+  "Strength without strain",
+  "Guidance, not gimmicks",
+  "Community",
+  "Presence",
+  "Energy that returns",
+  "Sleep that holds",
+  "Trust",
+] as const;
