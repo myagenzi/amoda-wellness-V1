@@ -107,7 +107,7 @@ function AboutPage() {
           video={missionVideo}
           poster={missionPoster}
           scrim="bg-mission-scrim"
-          videoClassName="scale-105 blur-[2px] saturate-[0.9]"
+          videoClassName="scale-105 blur-[2px] saturate-[0.9] object-[50%_90%] md:object-[50%_100%]"
         />
         <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-2">
           <Reveal>
