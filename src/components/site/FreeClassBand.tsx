@@ -35,7 +35,7 @@ const schedule: Row[] = [
   { category: "Diabetic Solutions", practitioner: "Arun Desai", price: "$120" },
 ];
 
-const cell = "type-band-cell px-3 text-center md:px-4";
+const cell = "type-band-cell px-2 text-center md:px-4";
 
 export function FreeClassBand() {
   return (

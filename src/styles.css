@@ -372,7 +372,7 @@
   grid-template-columns: 1fr 16.5% 16.5%;
   align-items: center;
   @media (width < 820px) {
-    grid-template-columns: 1fr 22% 22%;
+    grid-template-columns: 1fr 24% 24%;
   }
 }
 
