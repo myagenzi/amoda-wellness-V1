@@ -684,8 +684,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glow-trail::before,
-  .glow-trail::after,
+  .glow-trail-spin,
   .mark-drift {
     animation: none;
   }
