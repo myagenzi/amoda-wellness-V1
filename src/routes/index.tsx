@@ -139,30 +139,8 @@ function Home() {
       </Section>
 
       {/* 5 — Free live class banner */}
-      <Section tone="card" id="free-live-class">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <Reveal>
-            <Eyebrow withDot>{freeClass.eyebrow}</Eyebrow>
-            <h2 className="type-h1 mt-5 max-w-[26ch] text-ink">{freeClass.title}</h2>
-            <Prose className="mt-5">
-              <p>{freeClass.body}</p>
-            </Prose>
-          </Reveal>
-          <Reveal delay={140} className="emboss p-7">
-            <p className="type-label text-leaf">{freeClass.cta}</p>
-            <p className="mt-3 text-[0.9375rem] text-ink/75">
-              Email only. We'll send the link and a reminder — nothing else.
-            </p>
-            <div className="mt-6">
-              <EmailCaptureForm
-                cta={freeClass.cta}
-                successTitle="Your spot is reserved."
-                successBody="The link is on its way, with one reminder an hour before. Nothing else, ever."
-              />
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+      <FreeClassBand />
+
 
       {/* 6 — Trust / differentiation */}
       <Section tone="ink" className="relative overflow-hidden">
