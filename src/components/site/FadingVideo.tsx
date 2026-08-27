@@ -61,7 +61,13 @@ export function FadingVideo({
   }, [motionOk]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-ink" aria-hidden="true">
+    <div
+      className={cn(
+        "absolute inset-0 z-0 overflow-hidden",
+        fadeEdge ? edgeFade[fadeEdge] : "bg-ink",
+      )}
+      aria-hidden="true"
+    >
       <img
         src={poster.url}
         alt=""
