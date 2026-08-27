@@ -7,9 +7,13 @@ import { LotusMorphReveal } from "@/components/brand/LotusMorphReveal";
 import { manifesto } from "@/content/home";
 import { site } from "@/content/site";
 import founderImage from "@/assets/founder.jpg";
-import { VideoBackdrop } from "@/components/site/VideoBackdrop";
+import { FadingVideo } from "@/components/site/FadingVideo";
+import { BlurWords } from "@/components/site/BlurWords";
+import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
 import missionVideo from "@/assets/mission.mp4.asset.json";
 import missionPoster from "@/assets/mission-poster.jpg.asset.json";
+import classesVideo from "@/assets/live-classes.mp4.asset.json";
+import classesPoster from "@/assets/live-classes-poster.jpg.asset.json";
 
 const roles = [
   {
