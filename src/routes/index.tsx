@@ -62,7 +62,7 @@ function Home() {
                 to="/classes"
                 size="lg"
                 variant="onInk"
-                className="glow-trail bg-ink/90 backdrop-blur-[2px]"
+                className="glow-trail"
               >
                 {hero.primaryCta}
               </QuietLink>
