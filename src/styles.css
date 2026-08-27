@@ -534,3 +534,112 @@
     animation: none;
   }
 }
+
+/* ---- Liquid glass: near-transparent frosted card with a gradient edge ---- */
+
+@utility liquid-glass {
+  background: color-mix(in oklab, var(--parchment) 4%, transparent);
+  backdrop-filter: blur(4px) saturate(1.05);
+  border: none;
+  box-shadow: inset 0 1px 1px color-mix(in oklab, var(--parchment) 14%, transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Masked ring: bright at top and bottom, dissolving through the middle. */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--parchment) 45%, transparent) 0%,
+    color-mix(in oklab, var(--parchment) 15%, transparent) 20%,
+    transparent 40%,
+    transparent 60%,
+    color-mix(in oklab, var(--parchment) 15%, transparent) 80%,
+    color-mix(in oklab, var(--parchment) 45%, transparent) 100%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Footer glass rises into place once, unhurried. */
+@utility glass-rise {
+  animation: glass-rise 1000ms var(--ease-settle) 400ms both;
+}
+
+@keyframes glass-rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Hero CTA: an ambient gold-to-leaf light travelling the perimeter ---- */
+
+@utility glow-trail {
+  position: relative;
+  isolation: isolate;
+}
+
+.glow-trail::before,
+.glow-trail::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--trail-angle, 0deg),
+    transparent 0deg,
+    transparent 190deg,
+    color-mix(in oklab, var(--leaf) 70%, transparent) 250deg,
+    var(--gold) 320deg,
+    color-mix(in oklab, var(--gold) 40%, transparent) 348deg,
+    transparent 360deg
+  );
+  animation: trail-turn 9s linear infinite;
+}
+
+.glow-trail::after {
+  inset: -7px;
+  filter: blur(9px);
+  opacity: 0.55;
+}
+
+@property --trail-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes trail-turn {
+  to {
+    --trail-angle: 360deg;
+  }
+}
+
+/* ---- Guide launcher: the mark turns slowly while idle ---- */
+
+@utility mark-drift {
+  animation: lotus-rotate 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-trail::before,
+  .glow-trail::after,
+  .mark-drift {
+    animation: none;
+  }
+}
