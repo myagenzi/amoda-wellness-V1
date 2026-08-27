@@ -100,16 +100,12 @@ export function LotusMorphReveal({ className }: { className?: string }) {
         pts.push([p.x + Math.cos(angle) * r, p.y + Math.sin(angle) * r]);
       }
       ctx.beginPath();
-      const mid = (a: [number, number], b: [number, number]) =>
-        [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2] as [number, number];
-      let prev = pts[pts.length - 1];
-      let start = mid(prev, pts[0]);
-      ctx.moveTo(start[0], start[1]);
+      const at = (i: number) => pts[((i % pts.length) + pts.length) % pts.length]!;
+      const midX = (i: number) => (at(i)[0] + at(i + 1)[0]) / 2;
+      const midY = (i: number) => (at(i)[1] + at(i + 1)[1]) / 2;
+      ctx.moveTo(midX(-1), midY(-1));
       for (let i = 0; i < pts.length; i++) {
-        const cur = pts[i];
-        const next = pts[(i + 1) % pts.length];
-        const end = mid(cur, next);
-        ctx.quadraticCurveTo(cur[0], cur[1], end[0], end[1]);
+        ctx.quadraticCurveTo(at(i)[0], at(i)[1], midX(i), midY(i));
       }
       ctx.closePath();
       ctx.globalAlpha = p.a * 0.9;
