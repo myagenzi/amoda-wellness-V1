@@ -8,15 +8,10 @@ import bgMobile from "@/assets/freeclass-bg-mobile.jpg";
 /**
  * Section 5 — "Free Live Class This Week".
  *
- * Full-bleed still under a warm-green scrim with fluid container-query type —
- * the same layered atmosphere as the hero band. The content is the original
- * free-class invitation: copy on the left, the reservation form in a
- * frosted-glass card on the right so nothing reads as a stark white slab.
- *
- * The background is a still for now. To add the montage later, drop a
- * <video autoPlay muted loop playsInline> above the <picture>, start it at
- * opacity-0 and flip to opacity-100 on `canplay` with a .9s ease transition —
- * the same cross-fade the hero uses.
+ * Full-bleed still under a deep ink scrim with fluid container-query type.
+ * The plate is slightly blurred and desaturated so no bright highlight lands
+ * behind the copy; the reservation form sits in an ink-tinted glass card with
+ * a sage hairline so it reads as a deliberate element, not a smudge.
  */
 export function FreeClassBand() {
   return (
@@ -33,26 +28,26 @@ export function FreeClassBand() {
           height={1088}
           loading="lazy"
           aria-hidden="true"
-          className="absolute inset-0 -z-10 size-full object-cover"
+          className="absolute inset-0 -z-10 size-full scale-105 object-cover blur-[3px] saturate-[0.7]"
         />
       </picture>
       <div className="absolute inset-0 -z-10 bg-freeclass-scrim" aria-hidden="true" />
 
       <div className="band-cq mx-auto w-full max-w-6xl">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-          <Reveal>
-            <p className="type-label text-parchment/70">{freeClass.eyebrow}</p>
-            <h2 className="type-band-hero mt-6 max-w-[22ch] text-parchment [text-shadow:0_1px_18px_rgb(0_0_0/_0.25)]">
+        <div className="grid items-start gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <Reveal className="text-left">
+            <p className="type-label text-sage">{freeClass.eyebrow}</p>
+            <h2 className="type-band-hero mt-6 max-w-[22ch] text-parchment">
               {freeClass.title}
             </h2>
-            <p className="type-band-sub mt-5 max-w-[46ch] text-parchment/85">
+            <p className="type-band-sub mt-5 max-w-[46ch] text-parchment/90">
               {freeClass.body}
             </p>
             <div className="mt-8">
               <QuietLink
                 to="/classes"
                 variant="quiet"
-                className="text-sage decoration-sage/45 hover:decoration-sage"
+                className="px-0 text-sage decoration-sage/45 hover:decoration-sage"
               >
                 See Full Schedule
               </QuietLink>
@@ -61,7 +56,7 @@ export function FreeClassBand() {
 
           <Reveal delay={140} className="frost rounded-2xl p-7 md:p-8">
             <p className="type-label text-gold">{freeClass.cta}</p>
-            <p className="mt-3 text-[0.9375rem] text-parchment/80">
+            <p className="mt-3 text-[0.9375rem] text-parchment/85">
               Email only. We'll send the link and a reminder — nothing else.
             </p>
             <div className="mt-6">

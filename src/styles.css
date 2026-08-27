@@ -311,35 +311,59 @@
 
 /* ---- Free live class band: layered frost over a warm-green scrim ---- */
 
-/* Warm-green veil: darker at the top and foot, green-cast diagonal wash. */
+/* Warm-green veil: deep ink wash so parchment type stays fully legible. */
 @utility bg-freeclass-scrim {
   background-image:
     linear-gradient(
       to bottom,
-      color-mix(in oklab, var(--ink) 42%, transparent) 0%,
-      color-mix(in oklab, var(--ink) 20%, transparent) 20%,
-      transparent 38%
+      color-mix(in oklab, var(--ink) 78%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 58%, transparent) 42%,
+      color-mix(in oklab, var(--ink) 72%, transparent) 100%
     ),
     linear-gradient(
-      to top,
-      color-mix(in oklab, var(--ink) 30%, transparent) 0%,
-      transparent 26%
-    ),
-    linear-gradient(
-      120deg,
-      color-mix(in oklab, var(--leaf) 26%, transparent),
-      color-mix(in oklab, var(--ink) 22%, transparent)
+      100deg,
+      color-mix(in oklab, var(--ink) 62%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 26%, transparent) 55%,
+      color-mix(in oklab, var(--leaf) 30%, transparent) 100%
     );
 }
 
-/* Frosted glass row/panel — cool frost so it reads over green foliage. */
+/* Frosted glass panel — ink-tinted glass with a sage hairline, reads as a
+   deliberate card over foliage rather than a washed-out haze. */
 @utility frost {
-  background-color: color-mix(in oklab, white 14%, transparent);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  background-color: color-mix(in oklab, var(--ink) 62%, transparent);
+  backdrop-filter: blur(20px) saturate(1.1);
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklab, white 16%, transparent),
-    inset 0 1px 0 color-mix(in oklab, white 20%, transparent);
+    inset 0 0 0 1px color-mix(in oklab, var(--sage) 26%, transparent),
+    inset 0 1px 0 color-mix(in oklab, var(--sage) 20%, transparent),
+    0 18px 48px -24px color-mix(in oklab, var(--ink) 70%, transparent);
+}
+
+/* Input surface for dark grounds — opaque ink plate, sage hairline. */
+@utility field-on-ink {
+  background-color: color-mix(in oklab, var(--ink) 88%, transparent);
+  border-color: color-mix(in oklab, var(--sage) 34%, transparent);
+  color: var(--parchment);
+  &::placeholder {
+    color: color-mix(in oklab, var(--sage) 60%, transparent);
+  }
+  &:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--sage) 22%, transparent);
+  }
+}
+
+/* Merged Trust + Manifesto band: graded ink veil, heavy where type sits. */
+@utility bg-trust-scrim {
+  background-image:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--ink) 88%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 62%, transparent) 26%,
+      color-mix(in oklab, var(--ink) 40%, transparent) 48%,
+      color-mix(in oklab, var(--ink) 74%, transparent) 68%,
+      color-mix(in oklab, var(--ink) 92%, transparent) 100%
+    );
 }
 
 /* Fluid, container-relative type for the band (measurement-driven scale). */
