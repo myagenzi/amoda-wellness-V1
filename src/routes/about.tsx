@@ -49,20 +49,25 @@ function AboutPage() {
   return (
     <>
       <Section>
-        <Reveal className="max-w-[54ch]">
-          <Eyebrow withDot>About Amoda</Eyebrow>
-          <h1 className="type-hero mt-6 text-ink">
-            Amoda means <span className="type-accent">joy.</span>
-          </h1>
-          <p className="type-caption mt-4 text-leaf">(Sanskrit for joy, delight)</p>
-          <Prose className="mt-6">
-            <p>
-              We believe wellness isn't the absence of illness — it's the presence of vitality,
-              connection, balance, and joy in everyday life.
-            </p>
-            <p>That belief is the whole reason Amoda exists.</p>
-          </Prose>
-        </Reveal>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <Reveal className="max-w-[54ch]">
+            <Eyebrow withDot>About Amoda</Eyebrow>
+            <h1 className="type-hero mt-6 text-ink">
+              Amoda means <span className="type-accent">joy.</span>
+            </h1>
+            <p className="type-caption mt-4 text-leaf">(Sanskrit for joy, delight)</p>
+            <Prose className="mt-6">
+              <p>
+                We believe wellness isn't the absence of illness — it's the presence of vitality,
+                connection, balance, and joy in everyday life.
+              </p>
+              <p>That belief is the whole reason Amoda exists.</p>
+            </Prose>
+          </Reveal>
+          <Reveal delay={140} className="justify-self-center">
+            <LotusMorphReveal className="mx-auto max-w-[22rem] sm:max-w-[26rem] lg:max-w-none" />
+          </Reveal>
+        </div>
       </Section>
 
       <Section tone="card">
