@@ -137,12 +137,22 @@ export function AmodaGuide() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close the Amoda Guide" : "Talk with the Amoda Guide"}
         className={cn(
-          "fixed bottom-5 right-5 z-[70] flex items-center gap-3 rounded-full border border-sage/40 bg-ink px-4 py-3 text-parchment shadow-[0_18px_40px_-22px_rgb(30_46_26/0.7)] transition-all duration-500 ease-[var(--ease-settle)] hover:border-sage sm:bottom-7 sm:right-7",
-          open && "opacity-0 pointer-events-none",
+          "group fixed bottom-5 right-5 z-[70] flex h-14 items-center justify-center overflow-hidden rounded-full border border-sage/40 bg-ink text-parchment shadow-[0_18px_40px_-22px_rgb(30_46_26/0.7)] transition-[width,border-color] duration-[420ms] ease-[var(--ease-settle)] hover:border-sage sm:bottom-7 sm:right-7",
+          // Collapsed to a circle; widens on hover / keyboard focus to reveal the label.
+          "w-14 hover:w-[15.5rem] focus-visible:w-[15.5rem]",
+          open && "pointer-events-none opacity-0",
         )}
       >
-        <LotusMark variant="micro" ground="dark" className="w-6" />
-        <span className="type-label hidden sm:inline">Ask the Amoda Guide</span>
+        <span className="flex w-14 shrink-0 items-center justify-center">
+          <LotusMark
+            variant="micro"
+            ground="dark"
+            className="mark-drift w-7 [animation-duration:26s] group-hover:[animation-duration:140s] group-focus-visible:[animation-duration:140s]"
+          />
+        </span>
+        <span className="type-label whitespace-nowrap pr-6 opacity-0 transition-opacity duration-300 ease-[var(--ease-settle)] group-hover:opacity-100 group-focus-visible:opacity-100">
+          Ask the Amoda Guide
+        </span>
       </button>
 
       {/* Panel */}
