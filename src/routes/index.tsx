@@ -5,22 +5,23 @@ import { HeroVideo } from "@/components/site/HeroVideo";
 import { HeroTakeaways } from "@/components/site/HeroTakeaways";
 import { EcosystemScroller } from "@/components/site/EcosystemScroller";
 import { FreeClassBand } from "@/components/site/FreeClassBand";
+import { ManifestoBand } from "@/components/site/ManifestoBand";
 import { QuietLink } from "@/components/site/QuietButton";
-import { LotusMark, PetalDivider, LotusWatermark } from "@/components/brand/LotusMark";
+import { LotusMark, LotusWatermark } from "@/components/brand/LotusMark";
 import {
   audiences,
-  
+
   finalCta,
   hero,
-  manifesto,
   problem,
   seo,
   socialProof,
   testimonials,
   trust,
-  
+
   whoWeServe,
 } from "@/content/home";
+
 import { site } from "@/content/site";
 import heroImage from "@/assets/hero-conversation.jpg";
 import problemImage from "@/assets/problem-window.jpg";
@@ -161,21 +162,7 @@ function Home() {
       </Section>
 
       {/* 7 — Manifesto moment */}
-      <Section tone="sage">
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <LotusMark variant="ring" className="mx-auto w-14" />
-            <div className="mt-8 space-y-6">
-              {manifesto.map((line) => (
-                <p key={line} className="type-h2 whitespace-pre-line text-ink">
-                  {line}
-                </p>
-              ))}
-            </div>
-            <PetalDivider className="mx-auto mt-10 w-28" />
-          </Reveal>
-        </div>
-      </Section>
+      <ManifestoBand />
 
       {/* 8 — Social proof */}
       <Section>
