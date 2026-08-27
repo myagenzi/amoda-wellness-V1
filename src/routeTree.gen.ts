@@ -16,6 +16,7 @@ import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AboutHowItWorksRouteImport } from './routes/about.how-it-works'
+import { Route as ApiGuideRouteImport } from './routes/api/guide'
 import { Route as ClassesIndexRouteImport } from './routes/classes.index'
 import { Route as ClassesSlugRouteImport } from './routes/classes.$slug'
 import { Route as PractitionersIndexRouteImport } from './routes/practitioners.index'
@@ -58,6 +59,11 @@ const AboutHowItWorksRoute = AboutHowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
   getParentRoute: () => AboutRoute,
+} as any)
+const ApiGuideRoute = ApiGuideRouteImport.update({
+  id: '/api/guide',
+  path: '/api/guide',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ClassesIndexRoute = ClassesIndexRouteImport.update({
   id: '/classes/',
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/about/how-it-works': typeof AboutHowItWorksRoute
+  '/api/guide': typeof ApiGuideRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/practitioners/$slug': typeof PractitionersSlugRoute
   '/practitioners/apply': typeof PractitionersApplyRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/about/how-it-works': typeof AboutHowItWorksRoute
+  '/api/guide': typeof ApiGuideRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/practitioners/$slug': typeof PractitionersSlugRoute
   '/practitioners/apply': typeof PractitionersApplyRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/about/how-it-works': typeof AboutHowItWorksRoute
+  '/api/guide': typeof ApiGuideRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/practitioners/$slug': typeof PractitionersSlugRoute
   '/practitioners/apply': typeof PractitionersApplyRoute
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/about/how-it-works'
+    | '/api/guide'
     | '/classes/$slug'
     | '/practitioners/$slug'
     | '/practitioners/apply'
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/about/how-it-works'
+    | '/api/guide'
     | '/classes/$slug'
     | '/practitioners/$slug'
     | '/practitioners/apply'
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/about/how-it-works'
+    | '/api/guide'
     | '/classes/$slug'
     | '/practitioners/$slug'
     | '/practitioners/apply'
@@ -202,6 +214,7 @@ export interface RootRouteChildren {
   MembershipRoute: typeof MembershipRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  ApiGuideRoute: typeof ApiGuideRoute
   ClassesSlugRoute: typeof ClassesSlugRoute
   PractitionersSlugRoute: typeof PractitionersSlugRoute
   PractitionersApplyRoute: typeof PractitionersApplyRoute
@@ -261,6 +274,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/about/how-it-works'
       preLoaderRoute: typeof AboutHowItWorksRouteImport
       parentRoute: typeof AboutRoute
+    }
+    '/api/guide': {
+      id: '/api/guide'
+      path: '/api/guide'
+      fullPath: '/api/guide'
+      preLoaderRoute: typeof ApiGuideRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/classes/': {
       id: '/classes/'
@@ -331,6 +351,7 @@ const rootRouteChildren: RootRouteChildren = {
   MembershipRoute: MembershipRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  ApiGuideRoute: ApiGuideRoute,
   ClassesSlugRoute: ClassesSlugRoute,
   PractitionersSlugRoute: PractitionersSlugRoute,
   PractitionersApplyRoute: PractitionersApplyRoute,
