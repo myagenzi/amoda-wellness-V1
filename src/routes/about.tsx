@@ -114,12 +114,15 @@ function AboutPage() {
         </div>
       </Section>
 
+      {/* Mission + Manifesto: one continuous dark passage, no seam between them */}
+      <div className="relative isolate bg-ink">
       {/* Our Mission — full-viewport cinematic frame */}
-      <section className="relative isolate flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
+      <section className="relative flex min-h-screen items-center overflow-hidden px-5 py-24 sm:px-8 md:py-32">
         <FadingVideo
           video={missionVideo}
           poster={missionPoster}
           scrim="bg-mission-scrim"
+          fadeEdge="bottom"
           videoClassName="scale-105 blur-[2px] saturate-[0.9] object-[50%_90%] md:object-[50%_100%]"
         />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-2 lg:gap-16">
