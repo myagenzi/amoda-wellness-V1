@@ -3,6 +3,7 @@ import { Eyebrow, Prose, Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { QuietLink } from "@/components/site/QuietButton";
 import { PetalDivider, LotusMark } from "@/components/brand/LotusMark";
+import { LotusMorphReveal } from "@/components/brand/LotusMorphReveal";
 import { manifesto } from "@/content/home";
 import { site } from "@/content/site";
 import founderImage from "@/assets/founder.jpg";
