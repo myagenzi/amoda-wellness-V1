@@ -6,29 +6,14 @@ import { PetalDivider, LotusMark } from "@/components/brand/LotusMark";
 import { LotusMorphReveal } from "@/components/brand/LotusMorphReveal";
 import { manifesto } from "@/content/home";
 import { site } from "@/content/site";
-import founderImage from "@/assets/founder.jpg";
 import { FadingVideo } from "@/components/site/FadingVideo";
 import { BlurWords } from "@/components/site/BlurWords";
 import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
+import { FounderStory } from "@/components/site/FounderStory";
 import missionVideo from "@/assets/mission.mp4.asset.json";
 import missionPoster from "@/assets/mission-poster.jpg.asset.json";
 import manifestoVideo from "@/assets/manifesto.mp4.asset.json";
 import manifestoPoster from "@/assets/manifesto-poster.jpg.asset.json";
-
-const roles = [
-  {
-    title: "As Connector",
-    body: "she brings together clients and trusted practitioners, local communities and global wisdom, modern life and traditional practice.",
-  },
-  {
-    title: "As Curator",
-    body: "she ensures every practitioner and experience inside Amoda meets a real standard — qualified, ethical, authentic.",
-  },
-  {
-    title: "As Community Builder",
-    body: "she creates the belonging, accountability, and shared growth that makes wellness stick.",
-  },
-];
 
 const seo = {
   title: "About Amoda Wellness — Our Story & Founder",
@@ -77,42 +62,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="card">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
-          <Reveal>
-            <img
-              src={founderImage}
-              alt="Arti, founder of Amoda Wellness, in conversation in a warm, lived-in studio"
-              width={1400}
-              height={1200}
-              loading="lazy"
-              className="emboss aspect-[7/6] w-full rounded-lg object-cover"
-            />
-          </Reveal>
-          <Reveal delay={120}>
-            <Eyebrow>Our Story &amp; Founder</Eyebrow>
-            <h2 className="type-h1 mt-5 max-w-[26ch] text-ink">
-              Meet Arti — Connector, Curator, Community Builder
-            </h2>
-            <Prose className="mt-6">
-              <p>
-                Arti didn't set out to become another wellness expert adding her voice to an already
-                crowded space. She set out to build the bridge — between people looking for real
-                guidance and the practitioners, wisdom, and communities who could actually provide
-                it.
-              </p>
-            </Prose>
-            <dl className="mt-8 space-y-5">
-              {roles.map((role) => (
-                <div key={role.title} className="border-t border-[var(--hairline)] pt-5">
-                  <dt className="type-h3 text-ink">{role.title}</dt>
-                  <dd className="mt-2 text-[0.9375rem] leading-relaxed text-ink/75">{role.body}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-        </div>
-      </Section>
+      <FounderStory />
 
       {/* Mission + Manifesto: one continuous dark passage, no seam between them */}
       <div className="relative isolate bg-ink">
