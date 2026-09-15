@@ -84,7 +84,7 @@ function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <Eyebrow tone="sage">Where We're Headed</Eyebrow>
+            <Eyebrow tone="sage">From Ottawa to the World</Eyebrow>
             <Prose className="mt-6 text-parchment/85">
               <p>
                 From Ottawa to India to the world — Amoda is building toward becoming the first name
