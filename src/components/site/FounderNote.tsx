@@ -24,7 +24,7 @@ export function FounderNote() {
         <blockquote className="mt-5 max-w-[37ch]">
           <p className="font-display text-[1.5rem] font-light italic leading-[1.5] text-ink sm:text-[1.75rem] md:text-[2rem]">
             I created Amoda because I believe wellness should be something we can all access,
-            wherever we are in the world—and no one should have to navigate their journey alone.
+            wherever we are in the world, and no one should have to navigate their journey alone.
           </p>
         </blockquote>
 
