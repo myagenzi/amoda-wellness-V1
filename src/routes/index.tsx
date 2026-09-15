@@ -7,6 +7,7 @@ import { EcosystemScroller } from "@/components/site/EcosystemScroller";
 import { FreeClassBand } from "@/components/site/FreeClassBand";
 import { ConnectorMarquee } from "@/components/site/ConnectorMarquee";
 import { TrustManifestoBand } from "@/components/site/TrustManifestoBand";
+import { FounderNote } from "@/components/site/FounderNote";
 import { QuietLink } from "@/components/site/QuietButton";
 import { LotusMark } from "@/components/brand/LotusMark";
 import {
@@ -154,6 +155,9 @@ function Home() {
 
       {/* 6 + 7 — Trust and the Manifesto, merged over one abstract frame */}
       <TrustManifestoBand />
+
+      {/* Founder note — the person behind Amoda */}
+      <FounderNote />
 
       {/* 8 — Social proof */}
       <Section>
