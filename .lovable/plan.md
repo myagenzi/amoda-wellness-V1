@@ -1,61 +1,65 @@
-# Hostinger-ready export of the Amoda site
+# Redesign “Our Story & Founder” as an immersive founder story
 
-A single zip that uploads straight into Hostinger's `public_html` and runs with
-no build step, no Node, and no console or 404 errors.
+Replace only the current “Our Story & Founder” block on the About page. Keep the About hero, Mission, Manifesto, navigation, footer, fonts, and all other content unchanged.
 
-## What you get
+## What I understood
 
-`amoda-hostinger.zip` containing:
+- Use the new outdoor portrait of Arti supplied in `Arti_photo_-_founder_image_1.pdf`, replacing the current indoor founder image.
+- Use the full supplied founder copy verbatim from `Meet_Arti_-_Founder_Connector_Community_Builder_longer_copy_for_About_Arti_Founder_page.pdf`.
+- Follow the supplied HTML prototype’s storytelling structure and behavior rather than merely restyling the current two-column block.
+- Preserve Amoda’s quiet, restrained brand language: Parchment, Leaf, Ink, Sage, sparing Gold, Fraunces and Work Sans, gentle motion, and generous breathing room.
+- Improve the prototype where needed for readability, responsive behavior, and visual continuity with the existing site.
 
-- `public_html/` — the site itself, ready to drag into Hostinger's File Manager:
-  - `index.html` plus one folder per page (`about/`, `about/how-it-works/`,
-    `classes/` + each category, `practitioners/` + apply + each practitioner,
-    `shoppe/` + each product, `membership/`, `contact/`, `privacy/`, `terms/`),
-    each with its own `index.html` so clean URLs like `/about/` work.
-  - `assets/` — compiled CSS, the four videos with posters, every photograph and
-    lotus graphic, and self-hosted Fraunces / Work Sans / Yatra One fonts so the
-    "joy" lettering and headings render even without Google Fonts.
-  - `assets/site.js` — plain JavaScript (no React) for scroll reveals, mobile
-    nav, header search, announcement bar, sticky ecosystem scroller, connector
-    marquee, the fading/cinematic video grounds, the mission-video bottom crop,
-    the moving CTA border trail, the interactive lotus morph-reveal on About,
-    and form validation with success states.
-  - `.htaccess` — friendly URL handling, a 404 fallback, gzip and long-lived
-    caching for assets and video.
-  - `robots.txt`, `sitemap.xml`, `favicon.ico`.
-- `source/` — the complete project code (everything except `node_modules`,
-  `dist`, `.git`) in case you or a developer ever want to rebuild or move it to
-  a Node host.
-- `README-hostinger.txt` — upload steps and what is and isn't live.
+## Proposed composition
 
-## Decisions made for you
+### 1. Founder introduction
 
-- **Target: Hostinger shared / Premium hosting** (`public_html`, no Node). This
-  is the version that works on every Hostinger plan; the `source/` folder covers
-  the VPS case if you ever upgrade.
-- **Forms** (contact, enquiry, practitioner application, email capture) keep
-  their validation and success panel but do not send anywhere. I'll include a
-  commented PHP mailer snippet in the README so you can wire them to your
-  Hostinger email in one step if you want.
-- **Amoda Guide chat** is omitted from the static build, since it needs a live
-  AI endpoint and would only show an error on shared hosting.
+A calm parchment opening introduces:
 
-## Technical approach
+- “Our Story & Founder”
+- “Meet Arti.”
+- “Founder, Connector & Community Builder”
+- Her psychology, coaching, and holistic-wellness background
+- The short statement about wellness feeling accessible, connected, and human
 
-1. Production build for the final minified CSS and hashed assets.
-2. Playwright crawls all 28 routes on the running preview and captures the
-   rendered DOM, so video grounds, marquee and lotus canvas markup are present.
-3. Rewrite every `/_build/...`, `/__l5e/assets-v1/...`, `/@fs/...` and
-   `/favicon.ico` reference to a relative `assets/...` path, downloading each
-   file once; swap the Google Fonts stylesheet for a local `assets/fonts.css`
-   with woff2 files.
-4. Strip TanStack hydration scripts, inject `assets/site.js`, and rewrite route
-   links to relative paths that resolve from any subfolder depth.
-5. Verify by opening the exported files from disk in Playwright at desktop and
-   mobile widths — home, About, a class detail, a practitioner, Shoppe product,
-   membership — asserting zero failed requests, zero console errors, fonts
-   applied, all videos playing with correct crops, reveals firing, nav and
-   footer links resolving, and the CTA trail animating.
-6. Zip to `/mnt/documents/amoda-hostinger.zip`.
+The hierarchy will echo the prototype but use the site’s established type scale and visual tokens.
 
-No changes to the app itself — export only.
+### 2. Scroll-led founder story
+
+On desktop, create a full-height dark Ink passage with:
+
+- Arti’s portrait held prominently on the left
+- A softly frosted story panel on the right
+- Four chapters that transition as the visitor scrolls:
+  1. Why I Created Amoda
+  2. The Problem
+  3. What Amoda Brings
+  4. Connector, Curator, Community Builder
+- Quiet progress markers and slow cross-fades/slight vertical settling between chapters
+- A subtle image scale shift for depth, without showy parallax or distracting movement
+
+The portrait remains steady while the words progress, matching the prototype’s behavior and composition.
+
+### 3. Vision closing
+
+Return to parchment for “My Vision for Amoda,” followed by the remaining supplied copy and the closing statement:
+
+“And above all, I believe wellness was never meant to be a journey taken alone. That is the heart of Amoda.”
+
+Finish with the restrained Arti signature line from the prototype.
+
+## Mobile and accessibility
+
+- On smaller screens, avoid an excessively long pinned scene: show the portrait first, then stack the four story chapters in a natural reading flow.
+- Crop the portrait around Arti’s face and upper body while retaining enough garden context.
+- Preserve comfortable text sizes and contrast throughout.
+- Respect reduced-motion settings by showing all content without transitions or image movement.
+- Keep every word accessible in the page structure, not hidden in canvas or imagery.
+
+## Technical details
+
+- Extract the original portrait image from the supplied PDF and add it through the project’s managed asset flow.
+- Build the story as a focused About-page component with scroll progress driving chapter visibility on larger screens.
+- Use existing semantic brand tokens and the established Reveal/frosted-glass patterns; add only the small set of founder-story styles needed.
+- Keep the exact supplied copy in a structured content model so it remains easy to review and maintain.
+- Verify the complete About page at desktop and mobile sizes, including the handoff into the existing Mission section, portrait crop, chapter timing, reduced motion, and absence of overlap or clipped text.
