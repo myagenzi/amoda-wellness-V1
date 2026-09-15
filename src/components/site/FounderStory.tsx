@@ -109,6 +109,15 @@ export function FounderStory() {
   const sceneRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setReduceMotion(media.matches);
+    updatePreference();
+    media.addEventListener("change", updatePreference);
+    return () => media.removeEventListener("change", updatePreference);
+  }, []);
 
   useEffect(() => {
     const scene = sceneRef.current;
@@ -165,8 +174,13 @@ export function FounderStory() {
         </Reveal>
       </Section>
 
-      <section ref={sceneRef} className="relative bg-ink lg:h-[400vh]">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-center lg:py-16">
+      <section ref={sceneRef} className={cn("relative bg-ink", !reduceMotion && "lg:h-[400vh]")}>
+        <div
+          className={cn(
+            "mx-auto max-w-6xl px-5 py-20 sm:px-8",
+            !reduceMotion && "lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-center lg:py-16",
+          )}
+        >
           <div className="grid w-full gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12 xl:gap-16">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-lg shadow-2xl lg:h-[min(72vh,43rem)] lg:max-w-none">
               <img
@@ -175,7 +189,7 @@ export function FounderStory() {
                 width={1536}
                 height={2048}
                 className="size-full object-cover object-[50%_34%] transition-transform duration-700 ease-[var(--ease-settle)]"
-                style={{ transform: `scale(${1 + progress * 0.035})` }}
+                style={reduceMotion ? undefined : { transform: `scale(${1 + progress * 0.035})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-parchment sm:p-8">
@@ -184,7 +198,12 @@ export function FounderStory() {
               </div>
             </div>
 
-            <div className="hidden min-h-[32rem] items-center lg:relative lg:flex">
+            <div
+              className={cn(
+                "hidden min-h-[32rem] items-center",
+                !reduceMotion && "lg:relative lg:flex",
+              )}
+            >
               {chapters.map((chapter, index) => (
                 <StoryCard
                   key={chapter.label}
@@ -195,7 +214,7 @@ export function FounderStory() {
               ))}
             </div>
 
-            <div className="lg:hidden">
+            <div className={cn(!reduceMotion && "lg:hidden")}>
               {chapters.map((chapter, index) => (
                 <StoryCard
                   key={chapter.label}
@@ -208,7 +227,13 @@ export function FounderStory() {
             </div>
           </div>
 
-          <div className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 gap-2 lg:flex" aria-hidden="true">
+          <div
+            className={cn(
+              "absolute bottom-7 left-1/2 hidden -translate-x-1/2 gap-2",
+              !reduceMotion && "lg:flex",
+            )}
+            aria-hidden="true"
+          >
             {chapters.map((chapter, index) => (
               <span
                 key={chapter.label}
